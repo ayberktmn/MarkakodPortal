@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">MarkakodPortal</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="e_mail">E-mail</string>
+    <string name="Home">Anasayfa</string>
+    <string name="Profile">Profil</string>
+    <string name="Sifre">Şifre</string>
+    <string name="btn_register">Kayıt ol</string>
+    <string name="btn_login">Giriş yap</string>
+    <string name="markakod">Marka Kod</string>
+    <string name="about_us">Hakkımızda</string>
+    <string name="settings">Ayarlar</string>
+    <string name="paylas">Paylaş</string>
+    <string name="chat">Akış</string>
+    <string name="kullanıcı_adi">Kullanıcı adı</string>
+    <string name="calisanlar">Çalışanlar</string>
+    <string name="sirket_iletisim">Şirket İletişim</string>
+    <string name="cikis_yap">Çıkış Yap</string>
+</resources>
