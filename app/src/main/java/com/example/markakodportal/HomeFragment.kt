@@ -5,13 +5,14 @@ import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.os.Handler
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.addCallback
-import androidx.compose.runtime.currentCompositeKeyHash
 import androidx.core.widget.addTextChangedListener
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
@@ -19,11 +20,10 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.request.target.CustomTarget
 import com.bumptech.glide.request.transition.Transition
-import com.denzcoskun.imageslider.constants.ActionTypes
+import com.denzcoskun.imageslider.ImageSlider
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.interfaces.ItemChangeListener
 import com.denzcoskun.imageslider.interfaces.ItemClickListener
-import com.denzcoskun.imageslider.interfaces.TouchListener
 import com.denzcoskun.imageslider.models.SlideModel
 import com.example.markakodportal.databinding.FragmentHomeBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -42,8 +42,6 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val view = binding.root
 
-
-
         return view
     }
 
@@ -52,6 +50,9 @@ class HomeFragment : Fragment() {
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
             isBackPressed = true
         }
+
+
+
         // Animasyonu başlat
         binding.animationLinkedln.playAnimation()
 
@@ -107,9 +108,9 @@ class HomeFragment : Fragment() {
         }
 
 
-        binding.button.isEnabled = false // butonu başlangıçta devre dışı bırak
+        binding.btnSend.isEnabled = false // butonu başlangıçta devre dışı bırak
 
-        binding.button.setOnClickListener {
+        binding.btnSend.setOnClickListener {
             val statusText = binding.editTextText.text.toString()
                 .trim() // EditText içeriğini al ve baştaki ve sondaki boşlukları kaldır
 
@@ -125,10 +126,9 @@ class HomeFragment : Fragment() {
         binding.editTextText.addTextChangedListener { // EditText metni değiştiğinde kontrol et
             val statusText = binding.editTextText.text.toString()
                 .trim() // EditText içeriğini al ve baştaki ve sondaki boşlukları kaldır
-            binding.button.isEnabled =
+            binding.btnSend.isEnabled =
                 statusText.isNotEmpty() // Düğmeyi EditText'in doluluk durumuna göre etkinleştir veya devre dışı bırak
         }
-
 
         val requestOptions = RequestOptions()
             .centerCrop() // Ölçekleme tipi
@@ -150,26 +150,17 @@ class HomeFragment : Fragment() {
                         val slideModel = SlideModel(imageUrl, title, ScaleTypes.FIT)
                         imageList.add(slideModel)
                         if (imageList.size == slideList.size) {
-                            binding.imgSlider.setImageList(imageList, ScaleTypes.FIT)
+                            binding.imageSlider.setImageList(imageList, ScaleTypes.FIT)
                         }
                     }
-
                     override fun onLoadCleared(placeholder: Drawable?) {
 
                     }
                 })
-
-
-        binding.imgSlider.setItemChangeListener(object : ItemChangeListener {
-            override fun onItemChanged(position: Int) {
-                println("Pozisyon: " + position)
-
-            }
-        })
-
+        }
     }
-  }
 }
+
 
 
 

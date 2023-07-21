@@ -7,72 +7,46 @@
     tools:context=".HomeFragment" >
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="295dp"
-        android:layout_height="175dp"
-        android:layout_gravity="center"
-        android:background="@drawable/shape"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="81dp"
-        app:cardCornerRadius="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.092">
-
-        <com.denzcoskun.imageslider.ImageSlider
-            android:id="@+id/imgSlider"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/shape"
-            app:iss_auto_cycle="true"
-            app:iss_text_align="CENTER"
-            app:iss_delay="1000"
-            app:iss_period="1000" />
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
         android:id="@+id/cardView3"
         android:layout_width="313dp"
         android:layout_height="79dp"
-        android:layout_marginStart="47dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="48dp"
         app:cardCornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.404">
+        app:layout_constraintVertical_bias="0.413">
 
         <EditText
             android:id="@+id/editTextText"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/shape"
+            android:digits="ğüşıöçĞÜŞİÖÇ abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
             android:ems="10"
             android:gravity="center"
             android:hint="Ne düşünüyorsun..."
             android:inputType="textMultiLine"
-            android:digits="ğüşıöçĞÜŞİÖÇ abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789" />
+            app:layout_constraintStart_toStartOf="parent" />
     </androidx.cardview.widget.CardView>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnSend"
         android:layout_width="133dp"
         android:layout_height="55dp"
         android:layout_marginStart="260dp"
-        android:layout_marginTop="14dp"
         android:layout_marginEnd="51dp"
-        android:text="@string/paylas"
         android:background="@drawable/shape"
+        android:text="@string/paylas"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/cardView3"
+        app:layout_constraintVertical_bias="0.046" />
 
     <View
         android:id="@+id/viewSocialMedia"
@@ -87,23 +61,24 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.658" />
+        app:layout_constraintVertical_bias="0.701" />
 
     <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/animation_tw"
-        android:layout_width="57dp"
-        android:layout_height="58dp"
+        android:id="@+id/animation_face"
+        android:layout_width="85dp"
+        android:layout_height="112dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="7dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.13"
+        app:layout_constraintHorizontal_bias="0.639"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.683"
+        app:layout_constraintVertical_bias="0.731"
         app:lottie_autoPlay="true"
         app:lottie_loop="false"
-        app:lottie_rawRes="@raw/animation_twitter" />
+        app:lottie_rawRes="@raw/animation_facebook" />
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animation_insta"
@@ -117,7 +92,7 @@
         app:layout_constraintHorizontal_bias="0.373"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.683"
+        app:layout_constraintVertical_bias="0.722"
         app:lottie_autoPlay="true"
         app:lottie_loop="false"
         app:lottie_rawRes="@raw/animation_instagram" />
@@ -134,27 +109,45 @@
         app:layout_constraintHorizontal_bias="0.872"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.693"
+        app:layout_constraintVertical_bias="0.731"
         app:lottie_autoPlay="true"
         app:lottie_loop="false"
         app:lottie_rawRes="@raw/animation_linkedln" />
 
     <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/animation_face"
-        android:layout_width="85dp"
-        android:layout_height="112dp"
+        android:id="@+id/animation_tw"
+        android:layout_width="57dp"
+        android:layout_height="58dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="7dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.639"
+        app:layout_constraintHorizontal_bias="0.13"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.689"
+        app:layout_constraintVertical_bias="0.721"
         app:lottie_autoPlay="true"
         app:lottie_loop="false"
-        app:lottie_rawRes="@raw/animation_facebook" />
+        app:lottie_rawRes="@raw/animation_twitter" />
+
+    <com.denzcoskun.imageslider.ImageSlider
+        android:id="@+id/image_slider"
+        android:layout_width="290dp"
+        android:layout_height="165dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="70dp"
+        app:iss_auto_cycle="true"
+        app:iss_corner_radius="30"
+        app:iss_delay="1000"
+        app:iss_period="2000"
+        app:iss_text_align="CENTER"
+        app:layout_constraintBottom_toTopOf="@+id/cardView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.368"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
