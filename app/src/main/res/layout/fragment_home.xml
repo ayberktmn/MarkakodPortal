@@ -25,9 +25,10 @@
         <com.denzcoskun.imageslider.ImageSlider
             android:id="@+id/imgSlider"
             android:layout_width="match_parent"
-            android:background="@drawable/shape"
             android:layout_height="match_parent"
+            android:background="@drawable/shape"
             app:iss_auto_cycle="true"
+            app:iss_text_align="CENTER"
             app:iss_delay="1000"
             app:iss_period="1000" />
     </androidx.cardview.widget.CardView>
@@ -66,6 +67,7 @@
         android:layout_marginTop="14dp"
         android:layout_marginEnd="51dp"
         android:text="@string/paylas"
+        android:background="@drawable/shape"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -12,7 +12,7 @@ class PersonsFragment : Fragment() {
 
     private var _binding: FragmentPersonsBinding? = null
     private val binding get() = _binding!!
-    private var isBackPressed = false
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,8 +25,6 @@ class PersonsFragment : Fragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
-            isBackPressed = true
-        }
+
     }
 }

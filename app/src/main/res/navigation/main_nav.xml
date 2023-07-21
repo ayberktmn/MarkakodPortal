@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/socailNetworkFragment"
-        android:name="com.example.markakodportal.SocailNetworkFragment"
+        android:name="com.example.markakodportal.SocialNetworkFragment"
         android:label="fragment_socail_network"
         tools:layout="@layout/fragment_socail_network" >
         <action

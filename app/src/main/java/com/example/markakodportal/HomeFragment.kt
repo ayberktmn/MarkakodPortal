@@ -1,25 +1,32 @@
 package com.example.markakodportal
 
+import android.content.Intent
 import android.graphics.drawable.Drawable
+import android.net.Uri
 import android.os.Bundle
 import android.os.CountDownTimer
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.addCallback
+import androidx.compose.runtime.currentCompositeKeyHash
 import androidx.core.widget.addTextChangedListener
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.request.target.CustomTarget
 import com.bumptech.glide.request.transition.Transition
+import com.denzcoskun.imageslider.constants.ActionTypes
 import com.denzcoskun.imageslider.constants.ScaleTypes
+import com.denzcoskun.imageslider.interfaces.ItemChangeListener
+import com.denzcoskun.imageslider.interfaces.ItemClickListener
+import com.denzcoskun.imageslider.interfaces.TouchListener
 import com.denzcoskun.imageslider.models.SlideModel
 import com.example.markakodportal.databinding.FragmentHomeBinding
-
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
 class HomeFragment : Fragment() {
@@ -60,38 +67,67 @@ class HomeFragment : Fragment() {
             }
         }.start()
 
-
-        val imageUrlList = listOf(
-            "https://images.unsplash.com/photo-1621318164984-b06589834c91?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxOTU3MDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MjM2OTk4MjI&ixlib=rb-1.2.1&q=80&w=1080",
-            "https://images.unsplash.com/photo-1621551122354-e96737d64b70?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxOTU3MDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MjM2OTk4MjI&ixlib=rb-1.2.1&q=80&w=1080",
-            "https://images.unsplash.com/photo-1621616875450-79f024a8c42c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxOTU3MDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MjM2OTk4MjI&ixlib=rb-1.2.1&q=80&w=1080",
-            "https://images.unsplash.com/photo-1621687947404-e41b3d139088?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxOTU3MDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MjM2OTk4MjI&ixlib=rb-1.2.1&q=80&w=1080"
+        val slideList = arrayListOf(
+            SlideModel(
+                "https://images.unsplash.com/photo-1621318164984-b06589834c91?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxOTU3MDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MjM2OTk4MjI&ixlib=rb-1.2.1&q=80&w=1080",
+                "Bitkiler"
+            ),
+            SlideModel(
+                "https://images.unsplash.com/photo-1621551122354-e96737d64b70?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxOTU3MDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MjM2OTk4MjI&ixlib=rb-1.2.1&q=80&w=1080",
+                "Manzara"
+            ),
+            SlideModel(
+                "https://images.unsplash.com/photo-1621616875450-79f024a8c42c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxOTU3MDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MjM2OTk4MjI&ixlib=rb-1.2.1&q=80&w=1080",
+                "Doğa"
+            ),
+            SlideModel(
+                "https://images.unsplash.com/photo-1621687947404-e41b3d139088?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxOTU3MDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MjM2OTk4MjI&ixlib=rb-1.2.1&q=80&w=1080",
+                "Uçak"
+            )
         )
 
-        val titleList = listOf(
-            "Bitkiler",
-            "Manzara",
-            "Doğa",
-            "Uçak"
+        val twitterProfileUri = Uri.parse("https://twitter.com/")
 
-        )
+        binding.animationTw.setOnClickListener {
+            val twitterIntent = Intent(Intent.ACTION_VIEW, twitterProfileUri)
+            if (twitterIntent.resolveActivity(requireActivity().packageManager) != null) {
+                startActivity(twitterIntent)
+            } else {
+                // Twitter uygulaması yüklü değilse, Google Play Store'a yönlendirir
+                val playStoreUri = Uri.parse("market://details?id=com.twitter.android")
+                val playStoreIntent = Intent(Intent.ACTION_VIEW, playStoreUri)
+                if (playStoreIntent.resolveActivity(requireActivity().packageManager) != null) {
+                    startActivity(playStoreIntent)
+                } else {
+                    // Eğer Google Play Store da bulunmuyorsa, Twitter'ın web sitesine yönlendirir
+                    val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com"))
+                    startActivity(browserIntent)
+                }
+            }
+        }
 
-        binding.button.isEnabled = false // Düğmeyi başlangıçta devre dışı bırak
+
+        binding.button.isEnabled = false // butonu başlangıçta devre dışı bırak
 
         binding.button.setOnClickListener {
-            val statusText = binding.editTextText.text.toString().trim() // EditText içeriğini al ve baştaki ve sondaki boşlukları kaldır
+            val statusText = binding.editTextText.text.toString()
+                .trim() // EditText içeriğini al ve baştaki ve sondaki boşlukları kaldır
 
             if (statusText.isNotEmpty()) { // EditText boş değilse
+
                 Toast.makeText(requireContext(), "Durumunuz Paylaşıldı", Toast.LENGTH_SHORT).show()
-                findNavController().navigate(R.id.action_homeFragment_to_socailNetworkFragment)
+                val bottomNav =
+                    requireActivity().findViewById<BottomNavigationView>(R.id.bottomNavigationView)
+                bottomNav.selectedItemId = R.id.message
             }
         }
 
         binding.editTextText.addTextChangedListener { // EditText metni değiştiğinde kontrol et
-            val statusText = binding.editTextText.text.toString().trim() // EditText içeriğini al ve baştaki ve sondaki boşlukları kaldır
-            binding.button.isEnabled = statusText.isNotEmpty() // Düğmeyi EditText'in doluluk durumuna göre etkinleştir veya devre dışı bırak
+            val statusText = binding.editTextText.text.toString()
+                .trim() // EditText içeriğini al ve baştaki ve sondaki boşlukları kaldır
+            binding.button.isEnabled =
+                statusText.isNotEmpty() // Düğmeyi EditText'in doluluk durumuna göre etkinleştir veya devre dışı bırak
         }
-
 
 
         val requestOptions = RequestOptions()
@@ -99,9 +135,9 @@ class HomeFragment : Fragment() {
 
         val imageList = ArrayList<SlideModel>()
 
-        for (i in imageUrlList.indices) {
-            val imageUrl = imageUrlList[i]
-            val title = titleList[i]
+        for (slide in slideList) {
+            val imageUrl = slide.imageUrl // Slaytın resim URL'sini al
+            val title = slide.title // Slaytın başlığını al
 
             Glide.with(requireContext())
                 .load(imageUrl)
@@ -113,7 +149,7 @@ class HomeFragment : Fragment() {
                     ) {
                         val slideModel = SlideModel(imageUrl, title, ScaleTypes.FIT)
                         imageList.add(slideModel)
-                        if (imageList.size == imageUrlList.size) {
+                        if (imageList.size == slideList.size) {
                             binding.imgSlider.setImageList(imageList, ScaleTypes.FIT)
                         }
                     }
@@ -122,8 +158,19 @@ class HomeFragment : Fragment() {
 
                     }
                 })
-        }
 
+
+        binding.imgSlider.setItemChangeListener(object : ItemChangeListener {
+            override fun onItemChanged(position: Int) {
+                println("Pozisyon: " + position)
+
+            }
+        })
 
     }
+  }
 }
+
+
+
+
