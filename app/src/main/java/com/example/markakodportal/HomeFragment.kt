@@ -52,7 +52,6 @@ class HomeFragment : Fragment() {
         }
 
 
-
         // Animasyonu başlat
         binding.animationLinkedln.playAnimation()
 
@@ -86,50 +85,6 @@ class HomeFragment : Fragment() {
                 "Uçak"
             )
         )
-
-        val twitterProfileUri = Uri.parse("https://twitter.com/")
-
-        binding.animationTw.setOnClickListener {
-            val twitterIntent = Intent(Intent.ACTION_VIEW, twitterProfileUri)
-            if (twitterIntent.resolveActivity(requireActivity().packageManager) != null) {
-                startActivity(twitterIntent)
-            } else {
-                // Twitter uygulaması yüklü değilse, Google Play Store'a yönlendirir
-                val playStoreUri = Uri.parse("market://details?id=com.twitter.android")
-                val playStoreIntent = Intent(Intent.ACTION_VIEW, playStoreUri)
-                if (playStoreIntent.resolveActivity(requireActivity().packageManager) != null) {
-                    startActivity(playStoreIntent)
-                } else {
-                    // Eğer Google Play Store da bulunmuyorsa, Twitter'ın web sitesine yönlendirir
-                    val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com"))
-                    startActivity(browserIntent)
-                }
-            }
-        }
-
-
-        binding.btnSend.isEnabled = false // butonu başlangıçta devre dışı bırak
-
-        binding.btnSend.setOnClickListener {
-            val statusText = binding.editTextText.text.toString()
-                .trim() // EditText içeriğini al ve baştaki ve sondaki boşlukları kaldır
-
-            if (statusText.isNotEmpty()) { // EditText boş değilse
-
-                Toast.makeText(requireContext(), "Durumunuz Paylaşıldı", Toast.LENGTH_SHORT).show()
-                val bottomNav =
-                    requireActivity().findViewById<BottomNavigationView>(R.id.bottomNavigationView)
-                bottomNav.selectedItemId = R.id.message
-            }
-        }
-
-        binding.editTextText.addTextChangedListener { // EditText metni değiştiğinde kontrol et
-            val statusText = binding.editTextText.text.toString()
-                .trim() // EditText içeriğini al ve baştaki ve sondaki boşlukları kaldır
-            binding.btnSend.isEnabled =
-                statusText.isNotEmpty() // Düğmeyi EditText'in doluluk durumuna göre etkinleştir veya devre dışı bırak
-        }
-
         val requestOptions = RequestOptions()
             .centerCrop() // Ölçekleme tipi
 
@@ -153,15 +108,82 @@ class HomeFragment : Fragment() {
                             binding.imageSlider.setImageList(imageList, ScaleTypes.FIT)
                         }
                     }
+
                     override fun onLoadCleared(placeholder: Drawable?) {
 
                     }
                 })
+
+
+            val twitterPackage = "com.twitter.android"
+
+            binding.animationTw.setOnClickListener {
+                val twitterIntent = Intent(Intent.ACTION_VIEW, Uri.parse("twitter://user?screen_name=twitter_username"))
+
+                // Eğer Twitter uygulaması yüklü ise, Twitter profiline yönlendirme yap
+                if (twitterIntent.resolveActivity(requireActivity().packageManager) != null) {
+                    startActivity(twitterIntent)
+                } else {
+                    // Eğer Twitter uygulaması yüklü değilse, Google Play Store'a yönlendir
+                    val playStoreIntent = Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=$twitterPackage"))
+
+                    // Eğer Google Play Store yüklü ise, Twitter uygulamasının sayfasına yönlendirme yap
+                    if (playStoreIntent.resolveActivity(requireActivity().packageManager) != null) {
+                        startActivity(playStoreIntent)
+                    } else {
+                        // Eğer Google Play Store da bulunmuyorsa, Twitter'ın web sitesine yönlendir
+                        val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com/twitter_username"))
+                        startActivity(browserIntent)
+                    }
+                }
+            }
+
+
+            binding.btnSend.isEnabled = false // butonu başlangıçta devre dışı bırak
+
+            binding.btnSend.setOnClickListener {
+                val statusText = binding.editTextText.text.toString()
+                    .trim() // EditText içeriğini al ve baştaki ve sondaki boşlukları kaldır
+
+                if (statusText.isNotEmpty()) { // EditText boş değilse
+
+                    Toast.makeText(requireContext(), "Durumunuz Paylaşıldı", Toast.LENGTH_SHORT)
+                        .show()
+                    val bottomNav =
+                        requireActivity().findViewById<BottomNavigationView>(R.id.bottomNavigationView)
+                    bottomNav.selectedItemId = R.id.message
+                }
+            }
+
+            binding.editTextText.addTextChangedListener { // EditText metni değiştiğinde kontrol et
+                val statusText = binding.editTextText.text.toString()
+                    .trim() // EditText içeriğini al ve baştaki ve sondaki boşlukları kaldır
+                binding.btnSend.isEnabled =
+                    statusText.isNotEmpty() // Düğmeyi EditText'in doluluk durumuna göre etkinleştir veya devre dışı bırak
+            }
+
         }
+        binding.imageSlider.setItemClickListener(object : ItemClickListener {
+            override fun onItemSelected(position: Int) {
+                when (position) {
+                    0 -> navigateToFragment(R.id.message)
+                    1 -> navigateToFragment(R.id.profile)
+                    2 -> navigateToFragment(R.id.aboutus)
+                    3 -> navigateToFragment(R.id.home)
+                }
+                println("pozisyon: $position")
+            }
+
+            override fun doubleClick(position: Int) {
+                println("double click")
+            }
+        })
+
+    }
+
+    private fun navigateToFragment(id: Int) {
+        val bottomNav =
+            requireActivity().findViewById<BottomNavigationView>(R.id.bottomNavigationView)
+        bottomNav.selectedItemId = id
     }
 }
-
-
-
-
-

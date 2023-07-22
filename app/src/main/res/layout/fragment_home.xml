@@ -6,6 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".HomeFragment" >
 
+    <Button
+        android:id="@+id/btnSend"
+        android:layout_width="133dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="260dp"
+        android:layout_marginEnd="51dp"
+        android:background="@drawable/shape"
+        android:text="@string/paylas"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.909"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView3"
+        app:layout_constraintVertical_bias="0.052" />
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView3"
         android:layout_width="313dp"
@@ -15,9 +31,10 @@
         app:cardCornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.413">
+        app:layout_constraintVertical_bias="0.44">
 
         <EditText
             android:id="@+id/editTextText"
@@ -31,22 +48,6 @@
             android:inputType="textMultiLine"
             app:layout_constraintStart_toStartOf="parent" />
     </androidx.cardview.widget.CardView>
-
-    <Button
-        android:id="@+id/btnSend"
-        android:layout_width="133dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="260dp"
-        android:layout_marginEnd="51dp"
-        android:background="@drawable/shape"
-        android:text="@string/paylas"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView3"
-        app:layout_constraintVertical_bias="0.046" />
 
     <View
         android:id="@+id/viewSocialMedia"
@@ -132,22 +133,19 @@
 
     <com.denzcoskun.imageslider.ImageSlider
         android:id="@+id/image_slider"
-        android:layout_width="290dp"
-        android:layout_height="165dp"
-        android:layout_marginStart="70dp"
-        android:layout_marginTop="56dp"
-        android:layout_marginEnd="70dp"
+        android:layout_width="318dp"
+        android:layout_height="188dp"
+        android:layout_marginBottom="5dp"
         app:iss_auto_cycle="true"
         app:iss_corner_radius="30"
-        app:iss_delay="1000"
-        app:iss_period="2000"
+        app:iss_delay="2000"
+        app:iss_period="1000"
         app:iss_text_align="CENTER"
-        app:layout_constraintBottom_toTopOf="@+id/cardView3"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.368"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
-
+        app:layout_constraintVertical_bias="0.109" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
