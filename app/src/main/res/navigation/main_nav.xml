@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_homeFragment_to_socailNetworkFragment"
             app:destination="@id/socailNetworkFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_sliderDescriptionFragment"
+            app:destination="@id/sliderDescriptionFragment" />
     </fragment>
     <fragment
         android:id="@+id/socailNetworkFragment"
@@ -45,4 +48,9 @@
         android:name="com.example.markakodportal.PersonsFragment"
         android:label="fragment_persons"
         tools:layout="@layout/fragment_persons" />
+    <fragment
+        android:id="@+id/sliderDescriptionFragment"
+        android:name="com.example.markakodportal.SliderDescriptionFragment"
+        android:label="fragment_slider_description"
+        tools:layout="@layout/fragment_slider_description" />
 </navigation>

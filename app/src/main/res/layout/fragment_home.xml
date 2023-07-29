@@ -133,9 +133,8 @@
 
     <com.denzcoskun.imageslider.ImageSlider
         android:id="@+id/image_slider"
-        android:layout_width="318dp"
-        android:layout_height="188dp"
-        android:layout_marginBottom="5dp"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
         app:iss_auto_cycle="true"
         app:iss_corner_radius="30"
         app:iss_delay="2000"
@@ -143,9 +142,9 @@
         app:iss_text_align="CENTER"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.522"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.109" />
+        app:layout_constraintVertical_bias="0.095" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

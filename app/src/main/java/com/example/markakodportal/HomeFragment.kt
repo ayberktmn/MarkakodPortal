@@ -51,22 +51,6 @@ class HomeFragment : Fragment() {
             isBackPressed = true
         }
 
-
-        // Animasyonu başlat
-        binding.animationLinkedln.playAnimation()
-
-        // Animasyonu 0.7 saniye sonra durdurmak için zamanlayıcı oluştur
-        object : CountDownTimer(990, 1000) {
-            override fun onTick(millisUntilFinished: Long) {
-                // Her saniye için bir şey yapmak isterseniz buraya yazabilirsiniz
-            }
-
-            override fun onFinish() {
-                // Animasyonu durdur
-                binding.animationLinkedln.pauseAnimation()
-            }
-        }.start()
-
         val slideList = arrayListOf(
             SlideModel(
                 "https://images.unsplash.com/photo-1621318164984-b06589834c91?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxOTU3MDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MjM2OTk4MjI&ixlib=rb-1.2.1&q=80&w=1080",
@@ -107,6 +91,21 @@ class HomeFragment : Fragment() {
                         if (imageList.size == slideList.size) {
                             binding.imageSlider.setImageList(imageList, ScaleTypes.FIT)
                         }
+                        binding.imageSlider.setItemClickListener(object : ItemClickListener {
+                            override fun onItemSelected(position: Int) {
+                                when (position) {
+                                    0 -> findNavController().navigate(R.id.action_homeFragment_to_sliderDescriptionFragment)
+                                    1 -> findNavController().navigate(R.id.action_homeFragment_to_sliderDescriptionFragment)
+                                    2 -> findNavController().navigate(R.id.action_homeFragment_to_sliderDescriptionFragment)
+                                    3 -> findNavController().navigate(R.id.action_homeFragment_to_sliderDescriptionFragment)
+                                }
+                                println("pozisyon: $position")
+                            }
+
+                            override fun doubleClick(position: Int) {
+                                println("double click")
+                            }
+                        })
                     }
 
                     override fun onLoadCleared(placeholder: Drawable?) {
@@ -163,25 +162,11 @@ class HomeFragment : Fragment() {
             }
 
         }
-        binding.imageSlider.setItemClickListener(object : ItemClickListener {
-            override fun onItemSelected(position: Int) {
-                when (position) {
-                    0 -> navigateToFragment(R.id.message)
-                    1 -> navigateToFragment(R.id.profile)
-                    2 -> navigateToFragment(R.id.aboutus)
-                    3 -> navigateToFragment(R.id.home)
-                }
-                println("pozisyon: $position")
-            }
 
-            override fun doubleClick(position: Int) {
-                println("double click")
-            }
-        })
 
     }
 
-    private fun navigateToFragment(id: Int) {
+    private fun navigateToFragment(id: Int) {   // Bottom bar ın seçilen id sine göre yönlendiriyor
         val bottomNav =
             requireActivity().findViewById<BottomNavigationView>(R.id.bottomNavigationView)
         bottomNav.selectedItemId = id
