@@ -116,8 +116,12 @@ class HomeFragment : Fragment() {
 
             val twitterPackage = "com.twitter.android"
 
-            binding.animationTw.setOnClickListener {
-                val twitterIntent = Intent(Intent.ACTION_VIEW, Uri.parse("twitter://user?screen_name=twitter_username"))
+            binding.imgTwitter.setOnClickListener {
+                // Twitter uygulamasının URI'si
+                val twitterUri = Uri.parse("twitter://timeline")
+
+                // Twitter ana ekranını açmak için intent oluşturun
+                val twitterIntent = Intent(Intent.ACTION_VIEW, twitterUri)
 
                 // Eğer Twitter uygulaması yüklü ise, Twitter profiline yönlendirme yap
                 if (twitterIntent.resolveActivity(requireActivity().packageManager) != null) {
@@ -131,7 +135,7 @@ class HomeFragment : Fragment() {
                         startActivity(playStoreIntent)
                     } else {
                         // Eğer Google Play Store da bulunmuyorsa, Twitter'ın web sitesine yönlendir
-                        val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com/twitter_username"))
+                        val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com/"))
                         startActivity(browserIntent)
                     }
                 }
@@ -160,10 +164,7 @@ class HomeFragment : Fragment() {
                 binding.btnSend.isEnabled =
                     statusText.isNotEmpty() // Düğmeyi EditText'in doluluk durumuna göre etkinleştir veya devre dışı bırak
             }
-
         }
-
-
     }
 
     private fun navigateToFragment(id: Int) {   // Bottom bar ın seçilen id sine göre yönlendiriyor
@@ -171,4 +172,6 @@ class HomeFragment : Fragment() {
             requireActivity().findViewById<BottomNavigationView>(R.id.bottomNavigationView)
         bottomNav.selectedItemId = id
     }
+
+
 }
