@@ -9,6 +9,7 @@ import androidx.activity.addCallback
 import androidx.navigation.fragment.findNavController
 import com.example.markakodportal.databinding.FragmentPersonsBinding
 import com.example.markakodportal.databinding.FragmentProfileBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class ProfileFragment : Fragment() {
 
@@ -33,6 +34,11 @@ class ProfileFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
             isBackPressed = true
+        }
+
+        binding.txtAboutUs.setOnClickListener {
+            val bottomNav = requireActivity().findViewById<BottomNavigationView>(R.id.bottomNavigationView)
+            bottomNav.selectedItemId = R.id.aboutus
         }
     }
 }
