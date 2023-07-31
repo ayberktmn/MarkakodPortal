@@ -9,7 +9,7 @@ import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CircleCrop
 import com.bumptech.glide.request.RequestOptions
-import com.example.markakodportal.Profile
+import com.example.markakodportal.Dataclass.Profile
 import com.example.markakodportal.R
 
 class PersonsAdapter(private val profileList: List<Profile>) : RecyclerView.Adapter<PersonsAdapter.ProfileViewHolder>() {

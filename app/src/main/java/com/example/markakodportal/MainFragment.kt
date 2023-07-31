@@ -38,7 +38,7 @@ class MainFragment : Fragment() {
                         ?.navigate(R.id.homeFragment)
 
 
-                R.id.message -> {
+                R.id.socialChat -> {
                     // Profile öğesine tıklandığında yapılacak işlemler
                     childFragmentManager.primaryNavigationFragment?.findNavController()
                         ?.navigate(R.id.socailNetworkFragment)

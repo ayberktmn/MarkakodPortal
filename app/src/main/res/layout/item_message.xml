@@ -7,8 +7,8 @@
 
     <ImageView
         android:id="@+id/imageView7"
-        android:layout_width="60dp"
-        android:layout_height="57dp"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
         android:layout_marginStart="5dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="47dp"
@@ -22,12 +22,13 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="330dp"
-        android:layout_height="58dp"
+        android:layout_width="328dp"
+        android:layout_height="62dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="2dp"
         android:foreground="@drawable/shape"
+        android:layout_marginStart="3dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -73,5 +74,15 @@
             app:srcCompat="@drawable/messengerr" />
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/timestampTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="4dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

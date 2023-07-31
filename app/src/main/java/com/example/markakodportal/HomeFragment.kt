@@ -1,12 +1,10 @@
 package com.example.markakodportal
 
+import MessageAdapter
 import android.content.Intent
 import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.os.Bundle
-import android.os.CountDownTimer
-import android.os.Handler
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -14,17 +12,15 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.addCallback
 import androidx.core.widget.addTextChangedListener
-import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.request.target.CustomTarget
 import com.bumptech.glide.request.transition.Transition
-import com.denzcoskun.imageslider.ImageSlider
 import com.denzcoskun.imageslider.constants.ScaleTypes
-import com.denzcoskun.imageslider.interfaces.ItemChangeListener
 import com.denzcoskun.imageslider.interfaces.ItemClickListener
 import com.denzcoskun.imageslider.models.SlideModel
+
 import com.example.markakodportal.databinding.FragmentHomeBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -34,6 +30,9 @@ class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
     private var isBackPressed = false
+    private var messageList: MutableList<String> = mutableListOf()
+    private lateinit var messageAdapter : MessageAdapter
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -141,22 +140,22 @@ class HomeFragment : Fragment() {
                 }
             }
 
-
             binding.btnSend.isEnabled = false // butonu başlangıçta devre dışı bırak
-
             binding.btnSend.setOnClickListener {
-                val statusText = binding.editTextText.text.toString()
-                    .trim() // EditText içeriğini al ve baştaki ve sondaki boşlukları kaldır
+                val statusText = binding.editTextText.text.toString().trim()
 
-                if (statusText.isNotEmpty()) { // EditText boş değilse
+                if (statusText.isNotEmpty()) {
+                    val action = HomeFragmentDirections.actionHomeFragmentToSocailNetworkFragment(statusText)
+                    messageList.add(statusText)
 
-                    Toast.makeText(requireContext(), "Durumunuz Paylaşıldı", Toast.LENGTH_SHORT)
-                        .show()
-                    val bottomNav =
-                        requireActivity().findViewById<BottomNavigationView>(R.id.bottomNavigationView)
-                    bottomNav.selectedItemId = R.id.message
+                    println("listemesaj:$messageList")
+
+                    findNavController().navigate(action)
+                    // Sohbet sayfasına yönlendirme
+
                 }
             }
+        }
 
             binding.editTextText.addTextChangedListener { // EditText metni değiştiğinde kontrol et
                 val statusText = binding.editTextText.text.toString()
@@ -165,13 +164,11 @@ class HomeFragment : Fragment() {
                     statusText.isNotEmpty() // Düğmeyi EditText'in doluluk durumuna göre etkinleştir veya devre dışı bırak
             }
         }
-    }
+
 
     private fun navigateToFragment(id: Int) {   // Bottom bar ın seçilen id sine göre yönlendiriyor
         val bottomNav =
             requireActivity().findViewById<BottomNavigationView>(R.id.bottomNavigationView)
         bottomNav.selectedItemId = id
     }
-
-
 }

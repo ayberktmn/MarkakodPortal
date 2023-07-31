@@ -10,7 +10,7 @@
         app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/message"
+        android:id="@+id/socialChat"
         android:icon="@drawable/chatt"
         android:title="@string/chat"
         app:showAsAction="ifRoom" />

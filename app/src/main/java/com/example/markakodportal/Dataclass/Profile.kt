@@ -1,4 +1,4 @@
-package com.example.markakodportal
+package com.example.markakodportal.Dataclass
 
 data class Profile(
     val name: String,

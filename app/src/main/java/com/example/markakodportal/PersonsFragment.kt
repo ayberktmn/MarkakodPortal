@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.markakodportal.Dataclass.Profile
 import com.example.markakodportal.adapter.PersonsAdapter
 import com.example.markakodportal.databinding.FragmentPersonsBinding
 
