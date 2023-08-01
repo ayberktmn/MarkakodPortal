@@ -26,9 +26,7 @@
         <action
             android:id="@+id/action_socailNetworkFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
-        <argument
-            android:name="message"
-            app:argType="string"
+        <argument android:name="message"
             android:defaultValue=""/>
     </fragment>
     <fragment

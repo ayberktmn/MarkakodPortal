@@ -6,7 +6,9 @@ import java.util.Locale
 
 data class Message(
     val content: String,
-    val timestamp: Long
+    val timestamp: Long,
+    val comments: List<String>
+
 ) {
     fun getFormattedTime(): String {
         val calendar = Calendar.getInstance()
@@ -14,4 +16,5 @@ data class Message(
         val dateFormat = SimpleDateFormat("HH:mm", Locale.getDefault())
         return dateFormat.format(calendar.time)
     }
+
 }

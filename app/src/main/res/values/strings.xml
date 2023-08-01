@@ -17,4 +17,5 @@
     <string name="calisanlar">Çalışanlar</string>
     <string name="sirket_iletisim">Şirket İletişim</string>
     <string name="cikis_yap">Çıkış Yap</string>
+    <string name="yorum">Yorum yap</string>
 </resources>

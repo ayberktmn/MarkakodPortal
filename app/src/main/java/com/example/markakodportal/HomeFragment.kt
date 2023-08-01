@@ -116,29 +116,46 @@ class HomeFragment : Fragment() {
             val twitterPackage = "com.twitter.android"
 
             binding.imgTwitter.setOnClickListener {
-                // Twitter uygulamasının URI'si
-                val twitterUri = Uri.parse("twitter://timeline")
+                val twitterUsername = "markakod"
+                val twitterUri = Uri.parse("twitter://user?screen_name=$twitterUsername")
 
-                // Twitter ana ekranını açmak için intent oluşturun
                 val twitterIntent = Intent(Intent.ACTION_VIEW, twitterUri)
+                twitterIntent.setPackage("com.twitter.android") // Twitter uygulamasının paket adını set edin
 
-                // Eğer Twitter uygulaması yüklü ise, Twitter profiline yönlendirme yap
+                // Twitter uygulaması yüklü ise, Twitter profiline yönlendirme yap
                 if (twitterIntent.resolveActivity(requireActivity().packageManager) != null) {
                     startActivity(twitterIntent)
                 } else {
-                    // Eğer Twitter uygulaması yüklü değilse, Google Play Store'a yönlendir
-                    val playStoreIntent = Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=$twitterPackage"))
+                    // Twitter uygulaması yüklü değilse, Google Play Store'a yönlendir
+                    val playStoreIntent = Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.twitter.android"))
 
                     // Eğer Google Play Store yüklü ise, Twitter uygulamasının sayfasına yönlendirme yap
                     if (playStoreIntent.resolveActivity(requireActivity().packageManager) != null) {
                         startActivity(playStoreIntent)
                     } else {
                         // Eğer Google Play Store da bulunmuyorsa, Twitter'ın web sitesine yönlendir
-                        val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com/"))
+                        val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com/$twitterUsername"))
                         startActivity(browserIntent)
                     }
                 }
             }
+
+            binding.imgInstagram.setOnClickListener {
+                val instagramUsername = "markakod" // Kullanıcı adını buraya yazın
+                val instagramUri = Uri.parse("http://instagram.com/_u/$instagramUsername")
+                val instagramIntent = Intent(Intent.ACTION_VIEW, instagramUri)
+
+                // Instagram uygulaması yüklü ise, ilgili kullanıcının profil sayfasına yönlendirme yap
+                instagramIntent.setPackage("com.instagram.android")
+                if (instagramIntent.resolveActivity(requireActivity().packageManager) != null) {
+                    startActivity(instagramIntent)
+                } else {
+                    // Eğer Instagram uygulaması yüklü değilse, Instagram'ın web sitesine yönlendir
+                    val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("http://instagram.com/$instagramUsername"))
+                    startActivity(browserIntent)
+                }
+            }
+
 
             binding.btnSend.isEnabled = false // butonu başlangıçta devre dışı bırak
             binding.btnSend.setOnClickListener {
@@ -146,29 +163,25 @@ class HomeFragment : Fragment() {
 
                 if (statusText.isNotEmpty()) {
                     val action = HomeFragmentDirections.actionHomeFragmentToSocailNetworkFragment(statusText)
-                    messageList.add(statusText)
-
-                    println("listemesaj:$messageList")
 
                     findNavController().navigate(action)
-                    // Sohbet sayfasına yönlendirme
+                  //  navigateToBottombar(R.id.socialChat)  //bottom barı değiştirmek için kullan
 
+                    println("gönderilenmesaj:$action")
                 }
             }
         }
-
             binding.editTextText.addTextChangedListener { // EditText metni değiştiğinde kontrol et
-                val statusText = binding.editTextText.text.toString()
-                    .trim() // EditText içeriğini al ve baştaki ve sondaki boşlukları kaldır
-                binding.btnSend.isEnabled =
-                    statusText.isNotEmpty() // Düğmeyi EditText'in doluluk durumuna göre etkinleştir veya devre dışı bırak
+                val statusText = binding.editTextText.text.toString().trim() // EditText içeriğini al ve baştaki ve sondaki boşlukları kaldır
+                binding.btnSend.isEnabled = statusText.isNotEmpty() // Düğmeyi EditText'in doluluk durumuna göre etkinleştir veya devre dışı bırak
             }
         }
 
 
-    private fun navigateToFragment(id: Int) {   // Bottom bar ın seçilen id sine göre yönlendiriyor
+    private fun navigateToBottombar(id: Int) {   // Bottom bar ın seçilen id sine göre yönlendiriyor
         val bottomNav =
             requireActivity().findViewById<BottomNavigationView>(R.id.bottomNavigationView)
         bottomNav.selectedItemId = id
+
     }
 }
