@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeFragment" >
+
+    <Button
+        android:id="@+id/btnSend"
+        android:layout_width="121dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="260dp"
+        android:layout_marginEnd="51dp"
+        android:background="@drawable/shape"
+        android:text="@string/paylas"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.619"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView3"
+        app:layout_constraintVertical_bias="0.035" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView3"
+        android:layout_width="317dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="48dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.481">
+
+        <EditText
+            android:id="@+id/editTextText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/shape"
+            android:digits="ğüşıöçĞÜŞİÖÇ abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Ne düşünüyorsun..."
+            android:inputType="textMultiLine" />
+    </androidx.cardview.widget.CardView>
+
+    <View
+        android:id="@+id/viewSocialMedia"
+        android:layout_width="344dp"
+        android:layout_height="74dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="66dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/shape"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.826" />
+
+    <com.denzcoskun.imageslider.ImageSlider
+        android:id="@+id/image_slider"
+        android:layout_width="297dp"
+        android:layout_height="203dp"
+        app:iss_auto_cycle="true"
+        app:iss_corner_radius="30"
+        app:iss_delay="2000"
+        app:iss_period="1000"
+        app:iss_text_align="CENTER"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.137" />
+
+    <ImageView
+        android:id="@+id/imgTwitter"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/twitter"
+        app:layout_constraintBottom_toBottomOf="@+id/viewSocialMedia"
+        app:layout_constraintStart_toStartOf="@+id/viewSocialMedia"
+        app:layout_constraintTop_toTopOf="@+id/viewSocialMedia" />
+
+    <ImageView
+        android:id="@+id/imgInstagram"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/instagram"
+        app:layout_constraintBottom_toBottomOf="@+id/viewSocialMedia"
+        app:layout_constraintStart_toEndOf="@+id/imgTwitter"
+        app:layout_constraintTop_toTopOf="@+id/viewSocialMedia" />
+
+    <ImageView
+        android:id="@+id/imgFacebook"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/facebook"
+        app:layout_constraintBottom_toBottomOf="@+id/viewSocialMedia"
+        app:layout_constraintStart_toEndOf="@+id/imgInstagram"
+        app:layout_constraintTop_toTopOf="@+id/viewSocialMedia" />
+
+    <ImageView
+        android:id="@+id/imgLinkedin"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/linkedinn"
+        app:layout_constraintBottom_toBottomOf="@+id/viewSocialMedia"
+        app:layout_constraintStart_toEndOf="@+id/imgFacebook"
+        app:layout_constraintTop_toTopOf="@+id/viewSocialMedia" />
+
+    <ImageView
+        android:id="@+id/imgThreads"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/threads"
+        android:foreground="@drawable/shape"
+        app:layout_constraintBottom_toBottomOf="@+id/viewSocialMedia"
+        app:layout_constraintStart_toEndOf="@+id/imgLinkedin"
+        app:layout_constraintTop_toTopOf="@+id/viewSocialMedia" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

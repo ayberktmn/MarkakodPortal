@@ -31,8 +31,6 @@ class HomeFragment : Fragment() {
     private val binding get() = _binding!!
     private var isBackPressed = false
     private var messageList: MutableList<String> = mutableListOf()
-    private lateinit var messageAdapter : MessageAdapter
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -111,49 +109,21 @@ class HomeFragment : Fragment() {
 
                     }
                 })
-
-
-            val twitterPackage = "com.twitter.android"
-
+        }
             binding.imgTwitter.setOnClickListener {
-                val twitterUsername = "markakod"
-                val twitterUri = Uri.parse("twitter://user?screen_name=$twitterUsername")
-
-                val twitterIntent = Intent(Intent.ACTION_VIEW, twitterUri)
-                twitterIntent.setPackage("com.twitter.android") // Twitter uygulamasının paket adını set edin
-
-                // Twitter uygulaması yüklü ise, Twitter profiline yönlendirme yap
-                if (twitterIntent.resolveActivity(requireActivity().packageManager) != null) {
-                    startActivity(twitterIntent)
-                } else {
-                    // Twitter uygulaması yüklü değilse, Google Play Store'a yönlendir
-                    val playStoreIntent = Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.twitter.android"))
-
-                    // Eğer Google Play Store yüklü ise, Twitter uygulamasının sayfasına yönlendirme yap
-                    if (playStoreIntent.resolveActivity(requireActivity().packageManager) != null) {
-                        startActivity(playStoreIntent)
-                    } else {
-                        // Eğer Google Play Store da bulunmuyorsa, Twitter'ın web sitesine yönlendir
-                        val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com/$twitterUsername"))
-                        startActivity(browserIntent)
-                    }
-                }
+               Twittertodirect()
             }
-
             binding.imgInstagram.setOnClickListener {
-                val instagramUsername = "markakod" // Kullanıcı adını buraya yazın
-                val instagramUri = Uri.parse("http://instagram.com/_u/$instagramUsername")
-                val instagramIntent = Intent(Intent.ACTION_VIEW, instagramUri)
-
-                // Instagram uygulaması yüklü ise, ilgili kullanıcının profil sayfasına yönlendirme yap
-                instagramIntent.setPackage("com.instagram.android")
-                if (instagramIntent.resolveActivity(requireActivity().packageManager) != null) {
-                    startActivity(instagramIntent)
-                } else {
-                    // Eğer Instagram uygulaması yüklü değilse, Instagram'ın web sitesine yönlendir
-                    val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("http://instagram.com/$instagramUsername"))
-                    startActivity(browserIntent)
-                }
+                Instagramtodirect()
+            }
+            binding.imgFacebook.setOnClickListener {
+                Facebooktodirect()
+            }
+            binding.imgLinkedin.setOnClickListener {
+                Linkedintodirect()
+            }
+            binding.imgThreads.setOnClickListener {
+                Threadstodirect()
             }
 
 
@@ -170,18 +140,106 @@ class HomeFragment : Fragment() {
                     println("gönderilenmesaj:$action")
                 }
             }
-        }
+
             binding.editTextText.addTextChangedListener { // EditText metni değiştiğinde kontrol et
                 val statusText = binding.editTextText.text.toString().trim() // EditText içeriğini al ve baştaki ve sondaki boşlukları kaldır
                 binding.btnSend.isEnabled = statusText.isNotEmpty() // Düğmeyi EditText'in doluluk durumuna göre etkinleştir veya devre dışı bırak
             }
         }
 
-
     private fun navigateToBottombar(id: Int) {   // Bottom bar ın seçilen id sine göre yönlendiriyor
         val bottomNav =
             requireActivity().findViewById<BottomNavigationView>(R.id.bottomNavigationView)
         bottomNav.selectedItemId = id
 
+    }
+
+    private fun Instagramtodirect(){
+
+        val instagramUsername = "markakod" // Kullanıcı adını buraya yazın
+        val instagramUri = Uri.parse("http://instagram.com/_u/$instagramUsername")
+        val instagramIntent = Intent(Intent.ACTION_VIEW, instagramUri)
+
+        // Instagram uygulaması yüklü ise, ilgili kullanıcının profil sayfasına yönlendirme yap
+        instagramIntent.setPackage("com.instagram.android")
+        if (instagramIntent.resolveActivity(requireContext().packageManager) != null) {
+            startActivity(instagramIntent)
+        } else {
+            // Eğer Instagram uygulaması yüklü değilse, Instagram'ın web sitesine yönlendir
+            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("http://instagram.com/$instagramUsername"))
+            startActivity(browserIntent)
+        }
+    }
+
+    private fun Twittertodirect(){
+
+        val twitterUsername = "markakod"
+        val twitterUri = Uri.parse("twitter://user?screen_name=$twitterUsername")
+
+        val twitterIntent = Intent(Intent.ACTION_VIEW, twitterUri)
+        twitterIntent.setPackage("com.twitter.android") // Twitter uygulamasının paket adı
+
+        // Twitter uygulaması yüklü ise, Twitter profiline yönlendirme yap
+        if (twitterIntent.resolveActivity(requireContext().packageManager) != null) {
+            startActivity(twitterIntent)
+        }else {
+                // Twitter'ın web sitesine yönlendir
+            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com/$twitterUsername"))
+            startActivity(browserIntent)
+        }
+    }
+
+    private fun Facebooktodirect(){
+
+        val facebookUsername = "markakod"
+        val facebookUri = Uri.parse("facebook://user?screen_name=$facebookUsername")
+
+        val facebookIntent = Intent(Intent.ACTION_VIEW, facebookUri)
+        facebookIntent.setPackage("com.facebook.android") // facebook uygulamasının paket adı
+
+        // Facebook uygulaması yüklü ise, Twitter profiline yönlendirme yap
+        if (facebookIntent.resolveActivity(requireContext().packageManager) != null) {
+            startActivity(facebookIntent)
+        }else {
+            // Facebook'ın web sitesine yönlendir
+            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://facebook.com/$facebookUsername"))
+            startActivity(browserIntent)
+        }
+    }
+
+    private fun Linkedintodirect(){
+
+        val linkedinUsername = "markakod"
+        val linkedinUri = Uri.parse("linkedin://profile/$linkedinUsername")
+
+        val linkedinIntent  = Intent(Intent.ACTION_VIEW, linkedinUri)
+        linkedinIntent .setPackage("com.linkedin.android") // facebook uygulamasının paket adı
+
+        // Linkedin uygulaması yüklü ise, Linkedin profiline yönlendirme yap
+        if (linkedinIntent .resolveActivity(requireContext().packageManager) != null) {
+            startActivity(linkedinIntent )
+        }else {
+            // Linkedin'ın web sitesine yönlendir
+            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.linkedin.com/in/$linkedinUsername"))
+            startActivity(browserIntent)
+        }
+    }
+
+    private fun Threadstodirect(){
+
+        val threadsUsername = "markakod"
+        val threadsUri = Uri.parse("threads://profile/$threadsUsername")
+
+        val threadsIntent  = Intent(Intent.ACTION_VIEW, threadsUri)
+        threadsIntent .setPackage("com.threads.android") // facebook uygulamasının paket adı
+
+        // Threads uygulaması yüklü ise, Threads profiline yönlendirme yap
+        if (threadsIntent .resolveActivity(requireContext().packageManager) != null) {
+            startActivity(threadsIntent )
+        }else {
+            // Threads'in web sitesine yönlendir
+            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.threads.net/$threadsUsername"))
+            startActivity(browserIntent)
+        }
     }
 }
