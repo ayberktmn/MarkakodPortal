@@ -8,22 +8,22 @@
 
     <View
         android:id="@+id/view2"
-        android:layout_width="383dp"
-        android:layout_height="610dp"
+        android:layout_width="324dp"
+        android:layout_height="507dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:foreground="@drawable/shape"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.588" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txtExit"
         android:layout_width="217dp"
         android:layout_height="71dp"
-        android:layout_marginTop="504dp"
+        android:layout_marginTop="16dp"
         android:drawableEnd="@drawable/exit"
         android:foreground="@drawable/shape"
         android:gravity="center"
@@ -33,59 +33,53 @@
         app:layout_constraintBottom_toBottomOf="@+id/view2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imgPerson"
+        app:layout_constraintTop_toBottomOf="@+id/txtCompanycontact"
         app:layout_constraintVertical_bias="0.101" />
 
     <TextView
         android:id="@+id/txtCompanycontact"
         android:layout_width="217dp"
         android:layout_height="71dp"
-        android:layout_marginTop="408dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="16dp"
         android:drawableEnd="@drawable/phone"
         android:foreground="@drawable/shape"
         android:gravity="center"
         android:text="@string/sirket_iletisim"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/txtExit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imgPerson" />
+        app:layout_constraintTop_toBottomOf="@+id/txtPersons" />
 
     <TextView
         android:id="@+id/txtPersons"
         android:layout_width="217dp"
         android:layout_height="71dp"
-        android:layout_marginTop="300dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="16dp"
         android:drawableEnd="@drawable/persons"
         android:foreground="@drawable/shape"
         android:gravity="center"
         android:text="@string/calisanlar"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/txtCompanycontact"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imgPerson" />
+        app:layout_constraintTop_toBottomOf="@+id/txtAboutUs" />
 
     <TextView
         android:id="@+id/txtAboutUs"
         android:layout_width="217dp"
         android:layout_height="71dp"
-        android:layout_marginTop="192dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="128dp"
         android:drawableEnd="@drawable/info"
         android:foreground="@drawable/shape"
         android:gravity="center"
         android:text="@string/about_us"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/txtPersons"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imgPerson" />
+        app:layout_constraintTop_toTopOf="@+id/view2" />
 
     <ImageView
         android:id="@+id/imgPerson"
@@ -95,17 +89,15 @@
 
         app:layout_constraintBottom_toBottomOf="@+id/view2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.16"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view2"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.031" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="168dp"
         android:layout_height="54dp"
-        android:layout_marginTop="96dp"
-        android:layout_marginBottom="514dp"
         android:foreground="@drawable/shape"
         android:gravity="center"
         android:text="@string/kullanıcı_adi"
@@ -113,8 +105,8 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/view2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.68"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imgPerson"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="@+id/view2"
+        app:layout_constraintVertical_bias="0.07" />
 </androidx.constraintlayout.widget.ConstraintLayout>
