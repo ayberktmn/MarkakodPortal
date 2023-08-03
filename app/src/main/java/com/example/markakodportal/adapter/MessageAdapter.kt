@@ -61,8 +61,6 @@ class MessageAdapter(private val messageList: List<Message>) : RecyclerView.Adap
 
         }
     }
-
-
     override fun getItemCount(): Int {
         return messageList.size
     }

@@ -19,13 +19,12 @@
         app:layout_constraintEnd_toStartOf="@+id/linearLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/person" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="232dp"
-        android:layout_height="58dp"
+        android:layout_width="225dp"
+        android:layout_height="52dp"
         android:layout_marginStart="3dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
@@ -79,18 +78,16 @@
         android:id="@+id/timestampTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
+        android:layout_marginStart="80dp"
         android:layout_marginTop="4dp"
-        android:layout_marginEnd="77dp"
         android:text="TextView"
-        app:layout_constraintEnd_toStartOf="@+id/linearLayout2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <LinearLayout
         android:id="@+id/linearlayoutYorum"
-        android:layout_width="197dp"
-        android:layout_height="51dp"
+        android:layout_width="209dp"
+        android:layout_height="50dp"
         android:layout_marginStart="69dp"
         android:layout_marginTop="3dp"
         android:layout_marginEnd="3dp"
@@ -103,7 +100,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/txtComment"
-            android:layout_width="162dp"
+            android:layout_width="168dp"
             android:layout_height="wrap_content"
 
             android:hint="@string/yorum"
@@ -114,8 +111,8 @@
 
         <ImageView
             android:id="@+id/imgSendButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="11dp"
+            android:layout_height="34dp"
             android:layout_gravity="center"
             android:layout_weight="1"
             android:visibility="gone"

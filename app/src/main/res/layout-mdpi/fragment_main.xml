@@ -56,7 +56,7 @@
                 android:id="@+id/fragmentContainerView2"
                 android:name="androidx.navigation.fragment.NavHostFragment"
                 android:layout_width="match_parent"
-                android:layout_height="532dp"
+                android:layout_height="330dp"
                 android:layout_marginBottom="71dp"
                 app:defaultNavHost="true"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -99,7 +99,6 @@
         android:layout_height="wrap_content"
         android:src="@drawable/add"
         app:backgroundTint="@color/yellow"
-        app:layout_anchor="@+id/bottomAppBar"
-        app:layout_anchorGravity="top|center"
+        app:layout_anchor="@id/bottomAppBar"
         app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.MyApp.FloatingActionButton.Rounded" />
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>

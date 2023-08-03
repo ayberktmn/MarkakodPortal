@@ -8,36 +8,35 @@
 
     <TextView
         android:id="@+id/txtBaslik"
-        android:layout_width="182dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="28dp"
+        android:layout_width="247dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="24dp"
         android:foreground="@drawable/shape"
         android:gravity="center"
         android:text="Başlık"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.485"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="187dp"
-        android:layout_height="127dp"
-        android:layout_marginTop="44dp"
+        android:layout_width="264dp"
+        android:layout_height="161dp"
+        android:layout_marginTop="56dp"
         android:src="@drawable/markakod_logo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="263dp"
+        android:layout_height="223dp"
         android:layout_marginStart="65dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="44dp"
         android:layout_marginEnd="65dp"
         android:foreground="@drawable/shape"
         android:paddingStart="16dp"
@@ -47,16 +46,15 @@
         android:text="İçerik"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtBaslik" />
 
     <TextView
         android:id="@+id/txtBack"
-        android:layout_width="29dp"
-        android:layout_height="37dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
 
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
         android:foreground="@drawable/back"
         app:layout_constraintStart_toStartOf="parent"

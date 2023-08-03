@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.markakodportal.Dataclass.Message
 
 import com.example.markakodportal.databinding.FragmentSocailNetworkBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
 class SocialNetworkFragment : Fragment() {
@@ -46,15 +47,13 @@ class SocialNetworkFragment : Fragment() {
 
         println("gelen mesaj:$messageContent")
 
+        val message = Message(messageContent, System.currentTimeMillis(), mutableListOf())
+        messageList.add(message) // messageList'e mesajı ekleyin
 
-        val message = Message(messageContent,System.currentTimeMillis(),mutableListOf())
-
-        messageList.addAll(listOf(message))
-
-        messageAdapter.notifyItemInserted(messageList.size )
+        messageAdapter.notifyDataSetChanged() // messageAdapter'ı güncelleyin
 
         println("listemesaj:$messageList")
-
+        // Dikkat: Burada messageList'inizi messageAdapter'a ekleyeceğiniz bir kod satırı eklemeniz gerekiyor
     }
 
     private fun initRecycler() {
@@ -62,5 +61,12 @@ class SocialNetworkFragment : Fragment() {
         binding.rcylerMessages.adapter = messageAdapter
         val layoutManager = LinearLayoutManager(context)
         binding.rcylerMessages.layoutManager = layoutManager
+    }
+
+    private fun navigateToBottombar(id: Int) {   // Bottom bar ın seçilen id sine göre yönlendiriyor
+        val bottomNav =
+            requireActivity().findViewById<BottomNavigationView>(R.id.bottomNavigationView)
+        bottomNav.selectedItemId = id
+
     }
 }

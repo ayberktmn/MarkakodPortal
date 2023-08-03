@@ -8,8 +8,8 @@
 
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/gifImageView"
-        android:layout_width="416dp"
-        android:layout_height="710dp"
+        android:layout_width="372dp"
+        android:layout_height="714dp"
         android:src="@drawable/splash"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -18,17 +18,16 @@
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animation_passwordChange2"
-        android:layout_width="71dp"
-        android:layout_height="65dp"
+        android:layout_width="83dp"
+        android:layout_height="84dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
 
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.963"
+        app:layout_constraintVertical_bias="0.935"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/splash_m" />

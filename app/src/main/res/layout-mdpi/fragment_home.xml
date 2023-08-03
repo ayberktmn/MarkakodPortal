@@ -8,30 +8,33 @@
 
     <Button
         android:id="@+id/btnSend"
-        android:layout_width="128dp"
-        android:layout_height="47dp"
+        android:layout_width="103dp"
+        android:layout_height="37dp"
         android:layout_marginStart="260dp"
         android:layout_marginEnd="51dp"
         android:background="@drawable/shape"
         android:text="@string/paylas"
-        android:textSize="20sp"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.936"
+        app:layout_constraintHorizontal_bias="0.893"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView3"
-        app:layout_constraintVertical_bias="0.059" />
+        app:layout_constraintVertical_bias="0.049" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView3"
-        android:layout_width="273dp"
-        android:layout_height="60dp"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="48dp"
         app:cardCornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.909"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image_slider"
-        app:layout_constraintVertical_bias="0.248">
+        app:layout_constraintVertical_bias="0.19">
 
         <EditText
             android:id="@+id/editTextText"
@@ -47,22 +50,23 @@
 
     <View
         android:id="@+id/viewSocialMedia"
-        android:layout_width="296dp"
-        android:layout_height="67dp"
+        android:layout_width="238dp"
+        android:layout_height="66dp"
         android:layout_marginStart="17dp"
+        android:layout_marginTop="66dp"
         android:layout_marginEnd="20dp"
         android:background="@drawable/shape"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintHorizontal_bias="0.533"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView3"
-        app:layout_constraintVertical_bias="0.597" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.746" />
 
     <com.denzcoskun.imageslider.ImageSlider
         android:id="@+id/image_slider"
-        android:layout_width="267dp"
-        android:layout_height="180dp"
+        android:layout_width="182dp"
+        android:layout_height="118dp"
         app:iss_auto_cycle="true"
         app:iss_corner_radius="30"
         app:iss_delay="2000"
@@ -70,15 +74,14 @@
         app:iss_text_align="CENTER"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.073" />
+        app:layout_constraintVertical_bias="0.103" />
 
     <ImageView
         android:id="@+id/imgTwitter"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_marginStart="16dp"
         android:src="@drawable/twitter"
         app:layout_constraintBottom_toBottomOf="@+id/viewSocialMedia"
@@ -87,8 +90,8 @@
 
     <ImageView
         android:id="@+id/imgInstagram"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_marginStart="16dp"
         android:src="@drawable/instagram"
         app:layout_constraintBottom_toBottomOf="@+id/viewSocialMedia"
@@ -97,8 +100,8 @@
 
     <ImageView
         android:id="@+id/imgFacebook"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_marginStart="16dp"
         android:src="@drawable/facebook"
         app:layout_constraintBottom_toBottomOf="@+id/viewSocialMedia"
@@ -107,8 +110,8 @@
 
     <ImageView
         android:id="@+id/imgLinkedin"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_marginStart="16dp"
         android:src="@drawable/linkedinn"
         app:layout_constraintBottom_toBottomOf="@+id/viewSocialMedia"
@@ -117,8 +120,8 @@
 
     <ImageView
         android:id="@+id/imgThreads"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_marginStart="16dp"
         android:foreground="@drawable/shape"
         android:src="@drawable/threads"

@@ -127,21 +127,22 @@ class HomeFragment : Fragment() {
             }
 
 
-            binding.btnSend.isEnabled = false // butonu başlangıçta devre dışı bırak
-            binding.btnSend.setOnClickListener {
-                val statusText = binding.editTextText.text.toString().trim()
+        binding.btnSend.isEnabled = false // butonu başlangıçta devre dışı bırak
+        binding.btnSend.setOnClickListener {
+            val statusText = binding.editTextText.text.toString().trim()
 
-                if (statusText.isNotEmpty()) {
-                    val action = HomeFragmentDirections.actionHomeFragmentToSocailNetworkFragment(statusText)
+            if (statusText.isNotEmpty()) {
+                val action = HomeFragmentDirections.actionHomeFragmentToSocailNetworkFragment(statusText)
 
-                    findNavController().navigate(action)
-                  //  navigateToBottombar(R.id.socialChat)  //bottom barı değiştirmek için kullan
+                findNavController().navigate(action)
+                messageList.add(action.toString()) // Gönderilen mesajı messageList'e ekle
+                navigateToBottombar(R.id.socialChat) // Bottom barı değiştirmek için kullan
 
-                    println("gönderilenmesaj:$action")
-                }
+                println("gönderilenmesaj:$action")
             }
+        }
 
-            binding.editTextText.addTextChangedListener { // EditText metni değiştiğinde kontrol et
+        binding.editTextText.addTextChangedListener { // EditText metni değiştiğinde kontrol et
                 val statusText = binding.editTextText.text.toString().trim() // EditText içeriğini al ve baştaki ve sondaki boşlukları kaldır
                 binding.btnSend.isEnabled = statusText.isNotEmpty() // Düğmeyi EditText'in doluluk durumuna göre etkinleştir veya devre dışı bırak
             }
