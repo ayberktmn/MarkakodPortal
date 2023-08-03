@@ -22,7 +22,7 @@
 
     <TextView
         android:id="@+id/txtExit"
-        android:layout_width="140dp"
+        android:layout_width="145dp"
         android:layout_height="45dp"
         android:layout_marginTop="16dp"
         android:drawableEnd="@drawable/exit"
@@ -38,7 +38,7 @@
 
     <TextView
         android:id="@+id/txtCompanycontact"
-        android:layout_width="140dp"
+        android:layout_width="145dp"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="148dp"
@@ -57,7 +57,7 @@
 
     <TextView
         android:id="@+id/txtPersons"
-        android:layout_width="140dp"
+        android:layout_width="145dp"
         android:layout_height="45dp"
         android:layout_marginTop="16dp"
         android:drawableEnd="@drawable/persons"
@@ -73,7 +73,7 @@
 
     <TextView
         android:id="@+id/txtAboutUs"
-        android:layout_width="0dp"
+        android:layout_width="145dp"
         android:layout_height="45dp"
         android:layout_marginTop="20dp"
         android:drawableEnd="@drawable/info"

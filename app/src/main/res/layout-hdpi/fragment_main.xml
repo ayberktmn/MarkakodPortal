@@ -19,7 +19,7 @@
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:background="@color/black"
                 android:elevation="10dp"
                 android:minHeight="?attr/actionBarSize"
@@ -42,10 +42,10 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
                     android:text="@string/markakod"
                     android:textColor="@color/white"
                     android:textSize="20sp"
-                    android:layout_marginStart="25dp"
                     android:textStyle="bold"
                     tools:layout_editor_absoluteX="80dp"
                     tools:layout_editor_absoluteY="19dp" />
@@ -56,8 +56,8 @@
                 android:id="@+id/fragmentContainerView2"
                 android:name="androidx.navigation.fragment.NavHostFragment"
                 android:layout_width="match_parent"
-                android:layout_height="381dp"
-                android:layout_marginBottom="70dp"
+                android:layout_height="395dp"
+                android:layout_marginBottom="58dp"
                 app:defaultNavHost="true"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -73,7 +73,7 @@
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottomAppBar"
         android:layout_width="match_parent"
-        android:layout_height="68dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         app:backgroundTint="@color/black"
         app:fabCradleMargin="0dp"
