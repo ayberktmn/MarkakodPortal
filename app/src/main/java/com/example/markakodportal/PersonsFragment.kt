@@ -28,6 +28,14 @@ class PersonsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        view.translationY = view.height.toFloat()
+        view.alpha = 0f
+        view.animate()
+            .translationY(0f)
+            .alpha(1f)
+            .setDuration(1000)
+            .start()
+
         val profileList = createDummyData()
 
         val profileAdapter = PersonsAdapter(profileList)

@@ -48,6 +48,14 @@ class HomeFragment : Fragment() {
             isBackPressed = true
         }
 
+        view.translationY = view.height.toFloat()
+        view.alpha = 0f
+        view.animate()
+            .translationY(0f)
+            .alpha(1f)
+            .setDuration(1000)
+            .start()
+
         val slideList = arrayListOf(
             SlideModel(
                 "https://images.unsplash.com/photo-1621318164984-b06589834c91?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxOTU3MDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MjM2OTk4MjI&ixlib=rb-1.2.1&q=80&w=1080",

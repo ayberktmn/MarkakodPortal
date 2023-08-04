@@ -26,6 +26,14 @@ class LoginFragment : Fragment() {
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
         val view = binding.root
 
+        view.translationY = view.height.toFloat()
+        view.alpha = 0f
+        view.animate()
+            .translationY(0f)
+            .alpha(1f)
+            .setDuration(1000)
+            .start()
+
         binding.btnLogin.isEnabled = false // Düğmeyi başlangıçta devre dışı bırak
 
         binding.btnLogin.setOnClickListener {

@@ -36,18 +36,18 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.591"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.223"
+        app:layout_constraintStart_toEndOf="@+id/imgPerson"
         app:layout_constraintTop_toTopOf="@+id/viewperson"
-        app:layout_constraintVertical_bias="0.079" />
+        app:layout_constraintVertical_bias="0.068" />
 
     <ImageView
         android:id="@+id/imgPerson"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintEnd_toStartOf="@+id/txtPersonName"
-        app:layout_constraintHorizontal_bias="0.514"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/viewperson"
+        app:layout_constraintHorizontal_bias="0.125"
         app:layout_constraintStart_toStartOf="@+id/viewperson"
         app:layout_constraintTop_toTopOf="@+id/viewperson" />
 
@@ -55,7 +55,7 @@
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="@+id/viewperson"
         app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toStartOf="@+id/viewperson"
