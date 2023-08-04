@@ -9,6 +9,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CircleCrop
 import com.bumptech.glide.request.RequestOptions
 import com.example.markakodportal.R
+import jp.wasabeef.glide.transformations.BlurTransformation
 
 class ImageDialog(context: Context, private val imageUrl: String) : Dialog(context) {
 
@@ -22,6 +23,7 @@ class ImageDialog(context: Context, private val imageUrl: String) : Dialog(conte
         Glide.with(context)
             .load(imageUrl)
             .apply(RequestOptions.bitmapTransform(CircleCrop()))
+
             .into(imageView)
 
         // İsteğe bağlı olarak resmin büyütülmesini iptal etmek için diyalogun dışına tıklamayı kapatın

@@ -60,6 +60,7 @@ dependencies {
     implementation 'com.github.denzcoskun:ImageSlideshow:0.1.2'
 
     implementation 'com.airbnb.android:lottie:6.0.1'
+    implementation 'jp.wasabeef:glide-transformations:4.3.0'
 
 
 }

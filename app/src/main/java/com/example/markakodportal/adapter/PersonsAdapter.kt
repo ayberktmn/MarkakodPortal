@@ -13,6 +13,7 @@ import com.bumptech.glide.request.RequestOptions
 import com.example.markakodportal.Dataclass.Profile
 import com.example.markakodportal.R
 
+
 class PersonsAdapter(private val profileList: List<Profile>) : RecyclerView.Adapter<PersonsAdapter.ProfileViewHolder>() {
 
     // Profile öğelerini temsil eden iç sınıf
@@ -43,6 +44,7 @@ class PersonsAdapter(private val profileList: List<Profile>) : RecyclerView.Adap
             // Tıklanınca resmin büyümesi için ImageDialog oluşturup gösterin
             val dialog = ImageDialog(holder.itemView.context, profileImageUrl)
             dialog.show()
+
         }
 
         holder.emailTextView.text = profile.email
