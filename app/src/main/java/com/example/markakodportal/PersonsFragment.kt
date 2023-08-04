@@ -33,6 +33,7 @@ class PersonsFragment : Fragment() {
         val profileAdapter = PersonsAdapter(profileList)
         binding.rcylerPersons.layoutManager = LinearLayoutManager(requireContext())
         binding.rcylerPersons.adapter = profileAdapter
+
     }
 
     private fun createDummyData(): List<Profile> {

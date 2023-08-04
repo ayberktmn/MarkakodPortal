@@ -1,5 +1,6 @@
 package com.example.markakodportal.adapter
 
+import ImageDialog
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -20,6 +21,7 @@ class PersonsAdapter(private val profileList: List<Profile>) : RecyclerView.Adap
         val txtPersonName: TextView = itemView.findViewById(R.id.txtPersonName)
         val emailTextView: TextView = itemView.findViewById(R.id.txtEmail)
         val positionTextView: TextView = itemView.findViewById(R.id.txtPosition)
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProfileViewHolder {
@@ -37,6 +39,11 @@ class PersonsAdapter(private val profileList: List<Profile>) : RecyclerView.Adap
             .apply(RequestOptions.bitmapTransform(CircleCrop()))
             .into(holder.profileImage)
 
+        holder.profileImage.setOnClickListener {
+            // Tıklanınca resmin büyümesi için ImageDialog oluşturup gösterin
+            val dialog = ImageDialog(holder.itemView.context, profileImageUrl)
+            dialog.show()
+        }
 
         holder.emailTextView.text = profile.email
         holder.positionTextView.text = profile.position

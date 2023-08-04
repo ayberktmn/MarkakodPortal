@@ -24,19 +24,17 @@
         android:id="@+id/txtExit"
         android:layout_width="180dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginTop="16dp"
         android:drawableEnd="@drawable/exit"
         android:foreground="@drawable/shape"
         android:gravity="center"
         android:text="@string/cikis_yap"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/view2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtCompanycontact"
-        app:layout_constraintVertical_bias="0.932" />
+        app:layout_constraintTop_toBottomOf="@+id/txtCompanycontact" />
 
     <TextView
         android:id="@+id/txtCompanycontact"
@@ -74,7 +72,7 @@
         android:id="@+id/txtAboutUs"
         android:layout_width="180dp"
         android:layout_height="50dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="36dp"
         android:drawableEnd="@drawable/info"
         android:foreground="@drawable/shape"
         android:gravity="center"
@@ -82,14 +80,13 @@
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgPerson" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <ImageView
         android:id="@+id/imgPerson"
-        android:layout_width="70dp"
-        android:layout_height="73dp"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
         android:src="@drawable/person"
 
         app:layout_constraintBottom_toBottomOf="@+id/view2"
@@ -103,7 +100,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
+        android:layout_marginTop="16dp"
         android:foreground="@drawable/shape"
         android:gravity="center"
         android:padding="10dp"
@@ -111,10 +108,8 @@
         android:text="@string/kullanıcı_adi"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/txtAboutUs"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.613"
+        app:layout_constraintHorizontal_bias="0.608"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/view2"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="@+id/view2" />
 </androidx.constraintlayout.widget.ConstraintLayout>
