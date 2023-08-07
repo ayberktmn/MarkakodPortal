@@ -7,6 +7,17 @@
     tools:context=".ProfileFragment">
 
     <View
+        android:id="@+id/divider2"
+        android:layout_width="285dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/view2"
+        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <View
         android:id="@+id/view2"
         android:layout_width="289dp"
         android:layout_height="394dp"
@@ -18,7 +29,7 @@
         app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.438" />
+        app:layout_constraintVertical_bias="0.416" />
 
     <TextView
         android:id="@+id/txtExit"
@@ -29,6 +40,7 @@
         android:foreground="@drawable/shape"
         android:gravity="center"
         android:text="@string/cikis_yap"
+        android:textColor="#000000"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -45,6 +57,7 @@
         android:foreground="@drawable/shape"
         android:gravity="center"
         android:text="@string/sirket_iletisim"
+        android:textColor="#000000"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -61,6 +74,7 @@
         android:foreground="@drawable/shape"
         android:gravity="center"
         android:text="@string/calisanlar"
+        android:textColor="#000000"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -77,6 +91,7 @@
         android:foreground="@drawable/shape"
         android:gravity="center"
         android:text="@string/about_us"
+        android:textColor="#000000"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -106,6 +121,7 @@
         android:padding="10dp"
         android:paddingTop="10dp"
         android:text="@string/kullanıcı_adi"
+        android:textColor="#000000"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
