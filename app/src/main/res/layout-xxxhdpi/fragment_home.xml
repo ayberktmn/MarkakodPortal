@@ -63,8 +63,8 @@
 
     <com.denzcoskun.imageslider.ImageSlider
         android:id="@+id/image_slider"
-        android:layout_width="297dp"
-        android:layout_height="203dp"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
         app:iss_auto_cycle="true"
         app:iss_corner_radius="30"
         app:iss_delay="2000"

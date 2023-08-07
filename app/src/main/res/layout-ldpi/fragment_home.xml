@@ -63,8 +63,8 @@
 
     <com.denzcoskun.imageslider.ImageSlider
         android:id="@+id/image_slider"
-        android:layout_width="168dp"
-        android:layout_height="94dp"
+        android:layout_width="152dp"
+        android:layout_height="98dp"
         app:iss_auto_cycle="true"
         app:iss_corner_radius="30"
         app:iss_delay="2000"
@@ -74,7 +74,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.133" />
+        app:layout_constraintVertical_bias="0.121" />
 
     <ImageView
         android:id="@+id/imgTwitter"

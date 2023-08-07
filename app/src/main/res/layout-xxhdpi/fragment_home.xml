@@ -10,17 +10,16 @@
         android:id="@+id/btnSend"
         android:layout_width="128dp"
         android:layout_height="47dp"
-        android:layout_marginStart="260dp"
-        android:layout_marginEnd="51dp"
+        android:layout_marginStart="200dp"
         android:background="@drawable/shape"
         android:text="@string/paylas"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.936"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView3"
-        app:layout_constraintVertical_bias="0.059" />
+        app:layout_constraintVertical_bias="0.044" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView3"
@@ -31,7 +30,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image_slider"
-        app:layout_constraintVertical_bias="0.248">
+        app:layout_constraintVertical_bias="0.158">
 
         <EditText
             android:id="@+id/editTextText"
@@ -54,10 +53,10 @@
         android:background="@drawable/shape"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView3"
-        app:layout_constraintVertical_bias="0.554" />
+        app:layout_constraintVertical_bias="0.55" />
 
     <com.denzcoskun.imageslider.ImageSlider
         android:id="@+id/image_slider"
