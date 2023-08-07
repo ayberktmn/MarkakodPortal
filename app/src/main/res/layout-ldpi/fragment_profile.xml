@@ -31,12 +31,13 @@
 
     <TextView
         android:id="@+id/txtExit"
-        android:layout_width="145dp"
+        android:layout_width="160dp"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
         android:drawableEnd="@drawable/exit"
         android:foreground="@drawable/shape"
         android:gravity="center"
+        android:paddingEnd="10dp"
         android:text="@string/cikis_yap"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -46,12 +47,14 @@
 
     <TextView
         android:id="@+id/txtCompanycontact"
-        android:layout_width="145dp"
-        android:layout_height="wrap_content"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
         android:layout_marginTop="16dp"
+        android:paddingStart="5dp"
         android:drawableEnd="@drawable/phone"
         android:foreground="@drawable/shape"
         android:gravity="center"
+        android:paddingEnd="10dp"
         android:text="@string/sirket_iletisim"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -61,12 +64,13 @@
 
     <TextView
         android:id="@+id/txtPersons"
-        android:layout_width="145dp"
+        android:layout_width="160dp"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
         android:drawableEnd="@drawable/persons"
         android:foreground="@drawable/shape"
         android:gravity="center"
+        android:paddingEnd="10dp"
         android:text="@string/calisanlar"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -76,12 +80,13 @@
 
     <TextView
         android:id="@+id/txtAboutUs"
-        android:layout_width="145dp"
+        android:layout_width="160dp"
         android:layout_height="50dp"
         android:layout_marginTop="24dp"
         android:drawableEnd="@drawable/info"
         android:foreground="@drawable/shape"
         android:gravity="center"
+        android:paddingEnd="10dp"
         android:text="@string/about_us"
         android:textSize="20sp"
         android:textStyle="bold"

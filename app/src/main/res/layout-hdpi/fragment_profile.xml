@@ -33,9 +33,10 @@
 
     <TextView
         android:id="@+id/txtExit"
-        android:layout_width="150dp"
+        android:layout_width="160dp"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
+        android:paddingEnd="10dp"
         android:layout_marginBottom="36dp"
         android:drawableEnd="@drawable/exit"
         android:foreground="@drawable/shape"
@@ -52,9 +53,11 @@
 
     <TextView
         android:id="@+id/txtCompanycontact"
-        android:layout_width="150dp"
+        android:layout_width="160dp"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
+        android:paddingStart="5dp"
+        android:paddingEnd="10dp"
         android:drawableEnd="@drawable/phone"
         android:foreground="@drawable/shape"
         android:gravity="center"
@@ -68,9 +71,10 @@
 
     <TextView
         android:id="@+id/txtPersons"
-        android:layout_width="150dp"
+        android:layout_width="160dp"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
+        android:paddingEnd="10dp"
         android:drawableEnd="@drawable/persons"
         android:foreground="@drawable/shape"
         android:gravity="center"
@@ -84,9 +88,11 @@
 
     <TextView
         android:id="@+id/txtAboutUs"
-        android:layout_width="150dp"
+        android:layout_width="160dp"
         android:layout_height="50dp"
         android:layout_marginTop="32dp"
+        android:paddingStart="5dp"
+        android:paddingEnd="10dp"
         android:drawableEnd="@drawable/info"
         android:foreground="@drawable/shape"
         android:gravity="center"
