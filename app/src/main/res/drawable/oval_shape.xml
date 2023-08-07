@@ -1,5 +1,4 @@
-<shape xmlns:android="http://schemas.android.com/apk/res/android"
-    android:shape="oval">
-
-    <solid android:color="@color/black" />
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/transparent" />
+    <corners android:radius="1000dp" /> <!-- 1000dp veya daha büyük bir değer kullanarak yuvarlak yapabilirsiniz -->
 </shape>

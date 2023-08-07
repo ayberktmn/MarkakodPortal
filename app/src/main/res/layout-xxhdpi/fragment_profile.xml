@@ -21,8 +21,8 @@
 
     <TextView
         android:id="@+id/txtExit"
-        android:layout_width="217dp"
-        android:layout_height="71dp"
+        android:layout_width="200dp"
+        android:layout_height="70dp"
         android:layout_marginTop="16dp"
         android:drawableEnd="@drawable/exit"
         android:foreground="@drawable/shape"
@@ -38,8 +38,8 @@
 
     <TextView
         android:id="@+id/txtCompanycontact"
-        android:layout_width="217dp"
-        android:layout_height="71dp"
+        android:layout_width="200dp"
+        android:layout_height="70dp"
         android:layout_marginTop="16dp"
         android:drawableEnd="@drawable/phone"
         android:foreground="@drawable/shape"
@@ -53,8 +53,8 @@
 
     <TextView
         android:id="@+id/txtPersons"
-        android:layout_width="217dp"
-        android:layout_height="71dp"
+        android:layout_width="200dp"
+        android:layout_height="70dp"
         android:layout_marginTop="16dp"
         android:drawableEnd="@drawable/persons"
         android:foreground="@drawable/shape"
@@ -68,8 +68,8 @@
 
     <TextView
         android:id="@+id/txtAboutUs"
-        android:layout_width="217dp"
-        android:layout_height="71dp"
+        android:layout_width="200dp"
+        android:layout_height="70dp"
         android:layout_marginTop="128dp"
         android:drawableEnd="@drawable/info"
         android:foreground="@drawable/shape"
@@ -83,30 +83,32 @@
 
     <ImageView
         android:id="@+id/imgPerson"
-        android:layout_width="82dp"
-        android:layout_height="89dp"
+        android:layout_width="62dp"
+        android:layout_height="67dp"
         android:src="@drawable/person"
 
         app:layout_constraintBottom_toBottomOf="@+id/view2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.16"
+        app:layout_constraintHorizontal_bias="0.166"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view2"
-        app:layout_constraintVertical_bias="0.031" />
+        app:layout_constraintVertical_bias="0.07" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="168dp"
-        android:layout_height="54dp"
+        android:layout_width="wrap_content"
+        android:layout_height="64dp"
         android:foreground="@drawable/shape"
         android:gravity="center"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
         android:text="@string/kullanıcı_adi"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/view2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.68"
+        app:layout_constraintHorizontal_bias="0.607"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view2"
-        app:layout_constraintVertical_bias="0.07" />
+        app:layout_constraintVertical_bias="0.076" />
 </androidx.constraintlayout.widget.ConstraintLayout>

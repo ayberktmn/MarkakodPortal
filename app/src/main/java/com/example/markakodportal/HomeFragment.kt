@@ -1,5 +1,6 @@
 package com.example.markakodportal
 
+import ImageDialog
 import MessageAdapter
 import android.content.Intent
 import android.graphics.drawable.Drawable
@@ -58,20 +59,20 @@ class HomeFragment : Fragment() {
 
         val slideList = arrayListOf(
             SlideModel(
-                "https://images.unsplash.com/photo-1621318164984-b06589834c91?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxOTU3MDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MjM2OTk4MjI&ixlib=rb-1.2.1&q=80&w=1080",
-                "Bitkiler"
+                "https://markakod.com/wp-content/uploads/2023/05/aselsan-1.png",
+                "Aselsan"
             ),
             SlideModel(
-                "https://images.unsplash.com/photo-1621551122354-e96737d64b70?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxOTU3MDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MjM2OTk4MjI&ixlib=rb-1.2.1&q=80&w=1080",
-                "Manzara"
+                "https://markakod.com/wp-content/uploads/2023/06/EH-3.png",
+                "English Home"
             ),
             SlideModel(
-                "https://images.unsplash.com/photo-1621616875450-79f024a8c42c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxOTU3MDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MjM2OTk4MjI&ixlib=rb-1.2.1&q=80&w=1080",
-                "Doğa"
+                "https://markakod.com/wp-content/uploads/2023/05/porshe-club.png",
+                "Porsche Club"
             ),
             SlideModel(
-                "https://images.unsplash.com/photo-1621687947404-e41b3d139088?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxOTU3MDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MjM2OTk4MjI&ixlib=rb-1.2.1&q=80&w=1080",
-                "Uçak"
+                "https://markakod.com/wp-content/uploads/2023/06/My-project-1-18.png",
+                "Holi"
             )
         )
         val requestOptions = RequestOptions()
