@@ -33,7 +33,6 @@ class ContactFragment : Fragment() {
 
         _binding = FragmentContactBinding.inflate(inflater, container, false)
         val view= binding.root
-
         return view
     }
 
@@ -131,5 +130,4 @@ class ContactFragment : Fragment() {
         val url = "https://markakod.com/iletisim/"
         webView.loadUrl(url)
     }
-
 }
