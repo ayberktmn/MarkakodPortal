@@ -83,7 +83,7 @@ class ContactFragment : Fragment() {
 
         binding.animationAdres.setOnClickListener {
 
-                val address = binding.txtAdress.text.toString() // Göstermek istediğiniz adresi buraya girin
+                val address = binding.txtAdress.text.toString()
 
                 val intent = Intent(Intent.ACTION_VIEW, Uri.parse("geo:0,0?q=$address"))
                 intent.setPackage("com.google.android.apps.maps") // Google Haritalar uygulamasını zorunlu kıl
@@ -119,7 +119,7 @@ class ContactFragment : Fragment() {
 
             override fun onPageFinished(view: WebView?, url: String?) {
                 super.onPageFinished(view, url)
-                loadingDialog.dismiss() // Sayfa yüklendiğinde ProgressDialog'u kapat
+                loadingDialog.dismiss()
             }
 
             override fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest?): Boolean {
