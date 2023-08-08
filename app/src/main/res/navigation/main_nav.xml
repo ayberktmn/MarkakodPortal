@@ -40,6 +40,9 @@
         <action
             android:id="@+id/action_profileFragment_to_personsFragment"
             app:destination="@id/personsFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_contactFragment"
+            app:destination="@id/contactFragment" />
     </fragment>
     <fragment
         android:id="@+id/aboutusFragment"
@@ -56,4 +59,13 @@
         android:name="com.example.markakodportal.SliderDescriptionFragment"
         android:label="fragment_slider_description"
         tools:layout="@layout/fragment_slider_description" />
+    <fragment
+        android:id="@+id/contactFragment"
+        android:name="com.example.markakodportal.ContactFragment"
+        android:label="fragment_contact"
+        tools:layout="@layout/fragment_contact" >
+        <action
+            android:id="@+id/action_contactFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
 </navigation>

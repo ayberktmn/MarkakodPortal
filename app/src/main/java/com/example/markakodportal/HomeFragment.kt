@@ -91,6 +91,7 @@ class HomeFragment : Fragment() {
                     override fun onResourceReady(
                         resource: Drawable,
                         transition: Transition<in Drawable>?
+
                     ) {
                         val slideModel = SlideModel(imageUrl, title, ScaleTypes.FIT)
                         imageList.add(slideModel)

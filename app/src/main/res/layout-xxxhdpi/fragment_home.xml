@@ -43,6 +43,7 @@
             android:digits="ğüşıöçĞÜŞİÖÇ abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
             android:ems="10"
             android:gravity="center"
+            android:textCursorDrawable="@drawable/cursor"
             android:hint="Ne düşünüyorsun..."
             android:inputType="textMultiLine" />
     </androidx.cardview.widget.CardView>

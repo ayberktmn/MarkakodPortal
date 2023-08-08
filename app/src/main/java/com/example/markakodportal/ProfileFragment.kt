@@ -40,5 +40,11 @@ class ProfileFragment : Fragment() {
             val bottomNav = requireActivity().findViewById<BottomNavigationView>(R.id.bottomNavigationView)
             bottomNav.selectedItemId = R.id.aboutus
         }
+
+        binding.txtCompanycontact.setOnClickListener {
+
+            findNavController().navigate(R.id.action_profileFragment_to_contactFragment)
+
+        }
     }
 }
