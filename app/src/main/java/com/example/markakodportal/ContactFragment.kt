@@ -60,6 +60,45 @@ class ContactFragment : Fragment() {
             startActivity(intent)
         }
 
+        binding.animationTel.setOnClickListener {
+            val phoneNumber = binding.txtTelephone.text
+            val callIntent = Intent(Intent.ACTION_DIAL)
+            callIntent.data = Uri.parse("tel:$phoneNumber")
+            startActivity(callIntent)
+        }
+
+        binding.animationEmail.setOnClickListener{
+            val recipientEmail = arrayOf(binding.txtEmail.text.toString()) // Alıcının e-posta adresini buraya girin
+            val subject = "Konu ?" // E-posta konusunu buraya girin
+            val message = "Mesajınız ?" // E-posta mesajını buraya girin
+
+            val emailIntent = Intent(Intent.ACTION_SEND)
+            emailIntent.type = "text/plain"
+            emailIntent.putExtra(Intent.EXTRA_EMAIL, recipientEmail)
+            emailIntent.putExtra(Intent.EXTRA_SUBJECT, subject)
+            emailIntent.putExtra(Intent.EXTRA_TEXT, message)
+
+            startActivity(Intent.createChooser(emailIntent, "E-posta Gönder"))
+        }
+
+        binding.animationAdres.setOnClickListener {
+
+                val address = binding.txtAdress.text.toString() // Göstermek istediğiniz adresi buraya girin
+
+                val intent = Intent(Intent.ACTION_VIEW, Uri.parse("geo:0,0?q=$address"))
+                intent.setPackage("com.google.android.apps.maps") // Google Haritalar uygulamasını zorunlu kıl
+
+                if (intent.resolveActivity(requireActivity().packageManager) != null) {
+                    startActivity(intent)
+                } else {
+                    // Google Haritalar uygulaması yüklü değilse tarayıcıda açılıcak.
+                    val mapUrl = "https://www.google.com/maps/search/?api=1&query=$address"
+                    val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(mapUrl))
+                    startActivity(browserIntent)
+
+            }
+        }
+
         val webView = binding.webView
         webView.settings.javaScriptEnabled = true
         webView.webChromeClient = object : WebChromeClient() {
@@ -68,19 +107,19 @@ class ContactFragment : Fragment() {
                 if (newProgress == 100) {
                     loadingDialog.dismiss()
                 } else {
-                    loadingDialog?.show()
+                    loadingDialog.show()
                 }
             }
         }
         webView.webViewClient = object : WebViewClient() {
             override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
                 super.onPageStarted(view, url, favicon)
-                loadingDialog?.show()
+                loadingDialog.show()
             }
 
             override fun onPageFinished(view: WebView?, url: String?) {
                 super.onPageFinished(view, url)
-                loadingDialog?.dismiss() // Sayfa yüklendiğinde ProgressDialog'u kapat
+                loadingDialog.dismiss() // Sayfa yüklendiğinde ProgressDialog'u kapat
             }
 
             override fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest?): Boolean {
