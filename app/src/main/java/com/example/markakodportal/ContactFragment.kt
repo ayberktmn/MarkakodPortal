@@ -45,18 +45,19 @@ class ContactFragment : Fragment() {
         loadingDialog.window?.setBackgroundDrawableResource(android.R.color.transparent) // Arka planı şeffaf yap
         loadingDialog.setCancelable(false)
 
-        binding.txtWebsite.setOnClickListener {
+        binding.linearWebvisit.setOnClickListener {
             val url = "https://markakod.com/"
             val intent = Intent(Intent.ACTION_VIEW)
             intent.data = Uri.parse(url)
             startActivity(intent)
         }
 
-        binding.animationWeb?.setOnClickListener {
+        binding.animationWeb.setOnClickListener {
             val url = "https://markakod.com/"
             val intent = Intent(Intent.ACTION_VIEW)
             intent.data = Uri.parse(url)
             startActivity(intent)
+
         }
 
         binding.animationTel.setOnClickListener {
