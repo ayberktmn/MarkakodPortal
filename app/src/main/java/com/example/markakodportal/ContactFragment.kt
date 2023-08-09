@@ -16,7 +16,9 @@ import android.webkit.WebChromeClient
 import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
+import android.widget.ImageView
 import android.widget.ProgressBar
+import androidx.navigation.fragment.findNavController
 import com.example.markakodportal.databinding.FragmentContactBinding
 import com.example.markakodportal.databinding.LoadingDialogBinding
 
@@ -38,6 +40,15 @@ class ContactFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val cikis = requireActivity().findViewById<ImageView>(R.id.imgback)
+
+        cikis.visibility = View.VISIBLE
+
+        cikis.setOnClickListener {
+            findNavController().navigateUp()
+            cikis.visibility = View.GONE
+        }
 
         val loadingDialog = ProgressDialog(requireContext())
         loadingDialog.show()

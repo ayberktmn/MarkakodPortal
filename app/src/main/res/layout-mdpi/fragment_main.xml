@@ -50,6 +50,17 @@
                     tools:layout_editor_absoluteX="80dp"
                     tools:layout_editor_absoluteY="19dp" />
 
+                <ImageView
+                    android:id="@+id/imgback"
+                    android:layout_width="30dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="right"
+                    android:layout_marginEnd="5dp"
+                    android:visibility="gone"
+                    android:src="@drawable/back_white"
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:layout_editor_absoluteY="17dp" />
+
             </androidx.appcompat.widget.Toolbar>
 
             <androidx.fragment.app.FragmentContainerView

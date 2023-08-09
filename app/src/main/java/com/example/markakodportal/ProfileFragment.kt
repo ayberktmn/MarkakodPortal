@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.activity.addCallback
 import androidx.core.content.ContextCompat
+import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.markakodportal.databinding.FragmentPersonsBinding
@@ -60,7 +61,8 @@ class ProfileFragment : Fragment() {
         alertDialogBuilder.setMessage(getString(R.string.alert_message))
         alertDialogBuilder.setPositiveButton(R.string.positive_button) { dialog, _ ->
             // Çıkış yapılacak işlemleri burada gerçekleştir
-            requireActivity().finishAffinity()
+             requireActivity().finishAffinity()
+
         }
 
         alertDialogBuilder.setNegativeButton(R.string.negative_button) { dialog, _ ->

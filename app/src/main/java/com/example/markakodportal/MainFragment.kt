@@ -5,9 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.navigation.fragment.findNavController
 import com.example.markakodportal.databinding.FragmentHomeBinding
 import com.example.markakodportal.databinding.FragmentMainBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import org.w3c.dom.Text
 
 
 class MainFragment : Fragment() {
@@ -27,6 +30,10 @@ class MainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.imgMenu.setOnClickListener {
+            navigateToBottombar(R.id.home)
+        }
 
         binding.bottomNavigationView.setOnNavigationItemReselectedListener {}
         binding.bottomNavigationView.setOnItemSelectedListener {
@@ -58,5 +65,11 @@ class MainFragment : Fragment() {
             }
             true
         }
+
+    }
+    private fun navigateToBottombar(id: Int) {   // Bottom bar ın seçilen id sine göre yönlendiriyor
+        val bottomNav =
+            requireActivity().findViewById<BottomNavigationView>(R.id.bottomNavigationView)
+        bottomNav.selectedItemId = id
     }
 }

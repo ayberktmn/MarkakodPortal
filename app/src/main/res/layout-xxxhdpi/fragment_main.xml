@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="right"
     tools:context=".MainFragment">
 
     <androidx.drawerlayout.widget.DrawerLayout
@@ -42,13 +43,24 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
                     android:text="@string/markakod"
                     android:textColor="@color/white"
                     android:textSize="20sp"
-                    android:layout_marginStart="25dp"
                     android:textStyle="bold"
                     tools:layout_editor_absoluteX="80dp"
                     tools:layout_editor_absoluteY="19dp" />
+
+                <ImageView
+                    android:id="@+id/imgback"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="right"
+                    android:src="@drawable/back_white"
+                    android:visibility="gone"
+                    android:layout_marginEnd="5dp"
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:layout_editor_absoluteY="17dp" />
 
             </androidx.appcompat.widget.Toolbar>
 
@@ -101,4 +113,5 @@
         app:backgroundTint="@color/yellow"
         app:layout_anchor="@id/bottomAppBar"
         app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.MyApp.FloatingActionButton.Rounded" />
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

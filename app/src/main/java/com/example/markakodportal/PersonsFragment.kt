@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.markakodportal.Dataclass.Profile
 import com.example.markakodportal.adapter.PersonsAdapter
@@ -41,6 +43,15 @@ class PersonsFragment : Fragment() {
         val profileAdapter = PersonsAdapter(profileList)
         binding.rcylerPersons.layoutManager = LinearLayoutManager(requireContext())
         binding.rcylerPersons.adapter = profileAdapter
+
+        val cikis = requireActivity().findViewById<ImageView>(R.id.imgback)
+
+        cikis.visibility = View.VISIBLE
+
+        cikis.setOnClickListener {
+            findNavController().navigateUp()
+            cikis.visibility = View.GONE
+        }
 
     }
 
