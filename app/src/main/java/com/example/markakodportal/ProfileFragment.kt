@@ -1,11 +1,16 @@
 package com.example.markakodportal
 
+import android.app.AlertDialog
+import android.content.DialogInterface
+import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.addCallback
+import androidx.core.content.ContextCompat
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.markakodportal.databinding.FragmentPersonsBinding
 import com.example.markakodportal.databinding.FragmentProfileBinding
@@ -42,9 +47,33 @@ class ProfileFragment : Fragment() {
         }
 
         binding.txtCompanycontact.setOnClickListener {
-
             findNavController().navigate(R.id.action_profileFragment_to_contactFragment)
+        }
+        binding.txtExit.setOnClickListener {
+            showLogoutDialog()
+        }
+    }
+    private fun showLogoutDialog() {
+        val alertDialogBuilder = AlertDialog.Builder(requireContext())
+        alertDialogBuilder.setTitle(R.string.alert_title)
+
+        alertDialogBuilder.setMessage(getString(R.string.alert_message))
+        alertDialogBuilder.setPositiveButton(R.string.positive_button) { dialog, _ ->
+            // Çıkış yapılacak işlemleri burada gerçekleştir
+            requireActivity().finishAffinity()
+        }
+
+        alertDialogBuilder.setNegativeButton(R.string.negative_button) { dialog, _ ->
+            // İptal edildiğinde yapılacak işlemleri burada gerçekleştir
+            dialog.dismiss()
+        }
+
+        val alertDialog = alertDialogBuilder.create()
+        alertDialog.setOnShowListener {
+            alertDialog.getButton(AlertDialog.BUTTON_POSITIVE)?.setTextColor(Color.RED)
+            alertDialog.getButton(AlertDialog.BUTTON_NEGATIVE)?.setTextColor(Color.BLACK)
 
         }
+        alertDialog.show()
     }
 }
