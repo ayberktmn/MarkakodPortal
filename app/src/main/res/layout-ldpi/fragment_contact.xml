@@ -121,7 +121,7 @@
         android:textColor="#000000"
         android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@+id/textView6"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
+        app:layout_constraintTop_toBottomOf="@+id/linearWebvisit" />
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animationTel"
@@ -131,13 +131,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.514"
         app:layout_constraintStart_toEndOf="@+id/txtTelephone"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
+        app:layout_constraintTop_toBottomOf="@+id/linearWebvisit"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/phone" />
 
     <LinearLayout
-        android:id="@+id/linearLayout4"
+        android:id="@+id/linearWebvisit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -163,13 +163,13 @@
     </LinearLayout>
 
     <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/lottieAnimationView5"
+        android:id="@+id/animationWeb"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/linearLayout4"
+        app:layout_constraintStart_toEndOf="@+id/linearWebvisit"
         app:layout_constraintTop_toBottomOf="@+id/webView"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"

@@ -24,4 +24,8 @@
     <string name="mailadres">info@markakod.com</string>
     <string name="adres">Adres :</string>
     <string name="acikadres">19 MAYIS MAH. ATATÜRK CD. ULYA ENGİN İŞ MERKEZİ NO:68/9 KADIKÖY/İSTANBUL</string>
+    <string name="alert_message">Çıkış yapmak istediğinizden emin misiniz?</string>
+    <string name="positive_button">Evet</string>
+    <string name="negative_button">Hayır</string>
+    <string name="alert_title">Çıkış yap</string>
 </resources>
