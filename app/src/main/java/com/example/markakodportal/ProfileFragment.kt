@@ -33,7 +33,6 @@ class ProfileFragment : Fragment() {
         binding.txtPersons.setOnClickListener {
             findNavController().navigate(R.id.action_profileFragment_to_personsFragment)
         }
-
         return view
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -60,13 +59,13 @@ class ProfileFragment : Fragment() {
 
         alertDialogBuilder.setMessage(getString(R.string.alert_message))
         alertDialogBuilder.setPositiveButton(R.string.positive_button) { dialog, _ ->
-            // Çıkış yapılacak işlemleri burada gerçekleştir
+            // Çıkış yapılacak işlemler
              requireActivity().finishAffinity()
 
         }
 
         alertDialogBuilder.setNegativeButton(R.string.negative_button) { dialog, _ ->
-            // İptal edildiğinde yapılacak işlemleri burada gerçekleştir
+            // İptal edildiğinde yapılacak işlemler
             dialog.dismiss()
         }
 

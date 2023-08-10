@@ -78,6 +78,34 @@
                 app:layout_constraintTop_toBottomOf="@+id/toolbar"
                 app:navGraph="@navigation/main_nav" />
 
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/editFab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="116dp"
+                android:layout_marginBottom="12dp"
+                android:visibility="invisible"
+                android:focusable="true"
+                android:clickable="true"
+                android:src="@drawable/edit"
+                app:backgroundTint="@color/Light_blue"
+                app:layout_constraintBottom_toBottomOf="@+id/fragmentContainerView2"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/imgFab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="120dp"
+                android:layout_marginBottom="12dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:visibility="invisible"
+                android:src="@drawable/image"
+                app:backgroundTint="@color/Light_blue"
+                app:layout_constraintBottom_toBottomOf="@+id/fragmentContainerView2"
+                app:layout_constraintEnd_toEndOf="parent" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -111,6 +139,7 @@
         android:layout_height="wrap_content"
         android:src="@drawable/add"
         app:backgroundTint="@color/yellow"
+        android:focusable="true"
         app:layout_anchor="@id/bottomAppBar"
         app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.MyApp.FloatingActionButton.Rounded" />
 
