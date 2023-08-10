@@ -8,19 +8,20 @@
 
     <Button
         android:id="@+id/btnSend"
-        android:layout_width="103dp"
-        android:layout_height="37dp"
+        android:layout_width="83dp"
+        android:layout_height="35dp"
         android:layout_marginStart="52dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/shape"
         android:text="@string/paylas"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.704"
+        app:layout_constraintHorizontal_bias="0.751"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView3"
-        app:layout_constraintVertical_bias="0.051" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView3"
@@ -33,7 +34,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image_slider"
-        app:layout_constraintVertical_bias="0.19">
+        app:layout_constraintVertical_bias="0.098">
 
         <EditText
             android:id="@+id/editTextText"
@@ -42,10 +43,10 @@
             android:background="@drawable/shape"
             android:digits="ğüşıöçĞÜŞİÖÇ abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
             android:ems="10"
-            android:textCursorDrawable="@drawable/cursor"
             android:gravity="center"
             android:hint="Ne düşünüyorsun..."
-            android:inputType="textMultiLine" />
+            android:inputType="textMultiLine"
+            android:textCursorDrawable="@drawable/cursor" />
     </androidx.cardview.widget.CardView>
 
     <View
@@ -57,10 +58,10 @@
         android:background="@drawable/shape"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnSend"
-        app:layout_constraintVertical_bias="0.362" />
+        app:layout_constraintVertical_bias="0.125" />
 
     <com.denzcoskun.imageslider.ImageSlider
         android:id="@+id/image_slider"

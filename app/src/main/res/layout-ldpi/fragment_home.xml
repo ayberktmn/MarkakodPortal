@@ -8,24 +8,23 @@
 
     <Button
         android:id="@+id/btnSend"
-        android:layout_width="107dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="260dp"
+        android:layout_width="96dp"
+        android:layout_height="35dp"
         android:layout_marginEnd="51dp"
         android:background="@drawable/shape"
         android:text="@string/paylas"
-        android:textSize="14sp"
+        android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.909"
+        app:layout_constraintHorizontal_bias="0.942"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView3"
-        app:layout_constraintVertical_bias="0.058" />
+        app:layout_constraintVertical_bias="0.053" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView3"
-        android:layout_width="204dp"
-        android:layout_height="55dp"
+        android:layout_width="196dp"
+        android:layout_height="39dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         app:cardCornerRadius="15dp"
@@ -42,25 +41,25 @@
             android:background="@drawable/shape"
             android:digits="ğüşıöçĞÜŞİÖÇ abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
             android:ems="10"
-            android:textCursorDrawable="@drawable/cursor"
             android:gravity="center"
             android:hint="Ne düşünüyorsun..."
-            android:inputType="textMultiLine" />
+            android:inputType="textMultiLine"
+            android:textCursorDrawable="@drawable/cursor" />
     </androidx.cardview.widget.CardView>
 
     <View
         android:id="@+id/viewSocialMedia"
-        android:layout_width="248dp"
-        android:layout_height="59dp"
+        android:layout_width="212dp"
+        android:layout_height="47dp"
         android:layout_marginStart="17dp"
         android:layout_marginEnd="20dp"
         android:background="@drawable/shape"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.542"
+        app:layout_constraintHorizontal_bias="0.521"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnSend"
-        app:layout_constraintVertical_bias="0.294" />
+        app:layout_constraintVertical_bias="0.071" />
 
     <com.denzcoskun.imageslider.ImageSlider
         android:id="@+id/image_slider"
@@ -91,7 +90,7 @@
         android:id="@+id/imgInstagram"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="8dp"
         android:src="@drawable/instagram"
         app:layout_constraintBottom_toBottomOf="@+id/viewSocialMedia"
         app:layout_constraintStart_toEndOf="@+id/imgTwitter"
@@ -101,7 +100,7 @@
         android:id="@+id/imgFacebook"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="8dp"
         android:src="@drawable/facebook"
         app:layout_constraintBottom_toBottomOf="@+id/viewSocialMedia"
         app:layout_constraintStart_toEndOf="@+id/imgInstagram"
@@ -111,7 +110,7 @@
         android:id="@+id/imgLinkedin"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="8dp"
         android:src="@drawable/linkedinn"
         app:layout_constraintBottom_toBottomOf="@+id/viewSocialMedia"
         app:layout_constraintStart_toEndOf="@+id/imgFacebook"
@@ -121,7 +120,7 @@
         android:id="@+id/imgThreads"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="8dp"
         android:foreground="@drawable/shape"
         android:src="@drawable/threads"
         app:layout_constraintBottom_toBottomOf="@+id/viewSocialMedia"
