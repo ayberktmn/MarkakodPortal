@@ -79,11 +79,11 @@ class MainFragment : Fragment() {
         }
         binding.editFab?.setOnClickListener {
             println("tıklandı edit fab")
+
         }
         binding.imgFab?.setOnClickListener {
             println("tıklandı image fab")
         }
-
     }
 
     private fun onAddButtonCliked() {

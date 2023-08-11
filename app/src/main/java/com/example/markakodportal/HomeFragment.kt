@@ -24,6 +24,7 @@ import com.denzcoskun.imageslider.models.SlideModel
 
 import com.example.markakodportal.databinding.FragmentHomeBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 
 class HomeFragment : Fragment() {
@@ -135,7 +136,6 @@ class HomeFragment : Fragment() {
             binding.imgThreads.setOnClickListener {
                 Threadstodirect()
             }
-
 
         binding.btnSend.isEnabled = false // butonu başlangıçta devre dışı bırak
         binding.btnSend.setOnClickListener {
