@@ -18,7 +18,11 @@
         android:id="@+id/mainFragment"
         android:name="com.example.markakodportal.MainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_sendTextFragment"
+            app:destination="@id/sendTextFragment" />
+    </fragment>
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.markakodportal.LoginFragment"
@@ -28,4 +32,9 @@
             android:id="@+id/action_loginFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/sendTextFragment"
+        android:name="com.example.markakodportal.SendTextFragment"
+        android:label="fragment_send_text"
+        tools:layout="@layout/fragment_send_text" />
 </navigation>

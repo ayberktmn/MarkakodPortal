@@ -16,9 +16,6 @@
         <action
             android:id="@+id/action_homeFragment_to_sliderDescriptionFragment"
             app:destination="@id/sliderDescriptionFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_sendTextFragment"
-            app:destination="@id/sendTextFragment" />
 
     </fragment>
     <fragment
@@ -71,9 +68,4 @@
             android:id="@+id/action_contactFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/sendTextFragment"
-        android:name="com.example.markakodportal.SendTextFragment"
-        android:label="fragment_send_text"
-        tools:layout="@layout/fragment_send_text" />
 </navigation>

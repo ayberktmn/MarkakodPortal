@@ -78,11 +78,11 @@ class MainFragment : Fragment() {
             onAddButtonCliked()
         }
         binding.editFab?.setOnClickListener {
-            println("tıklandı edit fab")
+            findNavController().navigate(R.id.action_mainFragment_to_sendTextFragment)
 
         }
         binding.imgFab?.setOnClickListener {
-            println("tıklandı image fab")
+
         }
     }
 
