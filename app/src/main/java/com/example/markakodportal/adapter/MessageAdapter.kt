@@ -9,6 +9,9 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat.getSystemService
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.CircleCrop
+import com.bumptech.glide.request.RequestOptions
 import com.example.markakodportal.Dataclass.Message
 import com.example.markakodportal.R
 import com.example.markakodportal.databinding.ItemMessageBinding
@@ -41,12 +44,16 @@ class MessageAdapter(var messageList: List<Message>) : RecyclerView.Adapter<Mess
         val SendButton = holder.itemView.findViewById<ImageView>(R.id.imgSendButton)
         val linearlayoutYorum = holder.itemView.findViewById<LinearLayout>(R.id.linearlayoutYorum)
         val layoutyorummesaj = holder.itemView.findViewById<LinearLayout>(R.id.layoutyorummesajı)
-
+        val mesajfoto = holder.itemView.findViewById<ImageView>(R.id.imgMessagePhoto)
 
 
         holder.messageTextView.text = currentMessage.content
         holder.timestampTextView.text = currentMessage.getFormattedTime()
         currentMessage.comments.add(messageList.size.toString())
+        Glide.with(mesajfoto)
+            .load("https://media.licdn.com/dms/image/C4D03AQHGK0voeZK66A/profile-displayphoto-shrink_400_400/0/1662224359014?e=1697673600&v=beta&t=Vx0o5zMO-S4TT_TA-U1nO4YMnsGYoMM0AJ9kMv7GES8")
+            .apply(RequestOptions.bitmapTransform(CircleCrop()))
+            .into(mesajfoto)
 
 
         SendButton.setOnClickListener {
