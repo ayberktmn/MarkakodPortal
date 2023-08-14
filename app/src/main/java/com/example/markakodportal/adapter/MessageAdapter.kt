@@ -14,17 +14,18 @@ import com.example.markakodportal.R
 import com.example.markakodportal.databinding.ItemMessageBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class MessageAdapter(private val messageList: List<Message>) : RecyclerView.Adapter<MessageAdapter.MessageViewHolder>() {
+class MessageAdapter(var messageList: List<Message>) : RecyclerView.Adapter<MessageAdapter.MessageViewHolder>() {
 
     class MessageViewHolder(private val binding: ItemMessageBinding) : RecyclerView.ViewHolder(binding.root) {
         val messageTextView: TextView = itemView.findViewById(R.id.textViewMessage)
         val timestampTextView: TextView = itemView.findViewById(R.id.timestampTextView)
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MessageViewHolder {
         val binding = ItemMessageBinding.inflate(LayoutInflater.from(parent.context), parent, false)
 
-        binding.imageView9.setOnClickListener {
+        binding.imgComment.setOnClickListener {
             binding.txtComment.visibility = View.VISIBLE
             binding.linearlayoutYorum.visibility = View.VISIBLE
             binding.imgSendButton.visibility = View.VISIBLE
@@ -45,9 +46,13 @@ class MessageAdapter(private val messageList: List<Message>) : RecyclerView.Adap
 
         holder.messageTextView.text = currentMessage.content
         holder.timestampTextView.text = currentMessage.getFormattedTime()
+        currentMessage.comments.add(messageList.size.toString())
+
 
         SendButton.setOnClickListener {
+
             val messageText = txtyorum.text.toString()
+
             txtyorumm.text = messageText
             txtyorumm.visibility = View.VISIBLE
             txtyorum.setText("")
@@ -57,8 +62,6 @@ class MessageAdapter(private val messageList: List<Message>) : RecyclerView.Adap
             SendButton.visibility = View.GONE
 
             layoutyorummesaj.visibility = View.VISIBLE
-
-
         }
     }
     override fun getItemCount(): Int {

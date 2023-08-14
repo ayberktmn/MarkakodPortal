@@ -21,6 +21,7 @@ import com.bumptech.glide.request.transition.Transition
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.interfaces.ItemClickListener
 import com.denzcoskun.imageslider.models.SlideModel
+import com.example.markakodportal.Dataclass.Message
 
 import com.example.markakodportal.databinding.FragmentHomeBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -33,6 +34,7 @@ class HomeFragment : Fragment() {
     private val binding get() = _binding!!
     private var isBackPressed = false
     private var messageList: MutableList<String> = mutableListOf()
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -137,18 +139,16 @@ class HomeFragment : Fragment() {
                 Threadstodirect()
             }
 
-        binding.btnSend.isEnabled = false // butonu başlangıçta devre dışı bırak
+        binding.btnSend.isEnabled = false // Butonu başlangıçta devre dışı bırak
+
         binding.btnSend.setOnClickListener {
             val statusText = binding.editTextText.text.toString().trim()
 
             if (statusText.isNotEmpty()) {
                 val action = HomeFragmentDirections.actionHomeFragmentToSocailNetworkFragment(statusText)
-
                 findNavController().navigate(action)
-                messageList.add(action.toString()) // Gönderilen mesajı messageList'e ekle
-                navigateToBottombar(R.id.socialChat) // Bottom barı değiştirmek için kullan
 
-                println("gönderilenmesaj:$action")
+                println("Gönderilen mesaj: $statusText")
             }
         }
 

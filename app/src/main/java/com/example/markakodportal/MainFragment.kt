@@ -79,7 +79,6 @@ class MainFragment : Fragment() {
         }
         binding.editFab?.setOnClickListener {
             findNavController().navigate(R.id.action_mainFragment_to_sendTextFragment)
-
         }
         binding.imgFab?.setOnClickListener {
 

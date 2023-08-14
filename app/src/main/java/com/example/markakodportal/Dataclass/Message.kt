@@ -7,7 +7,7 @@ import java.util.Locale
 data class Message(
     val content: String,
     val timestamp: Long,
-    val comments: List<String>
+    val comments: MutableList<String>
 
 ) {
     fun getFormattedTime(): String {

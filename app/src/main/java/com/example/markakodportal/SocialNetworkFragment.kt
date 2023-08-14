@@ -11,6 +11,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.activity.addCallback
+import androidx.core.view.size
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.markakodportal.Dataclass.Message
 
@@ -40,20 +41,22 @@ class SocialNetworkFragment : Fragment() {
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
             isBackPressed = true
         }
-        initRecycler()
 
         val args = SocialNetworkFragmentArgs.fromBundle(requireArguments())
         val messageContent = args.message
 
-        println("gelen mesaj:$messageContent")
+        if (messageList.isEmpty()) { // Eğer messageList boş ise yeni mesajı ekle
+            val message = Message(messageContent, System.currentTimeMillis(), mutableListOf(messageContent))
+            val message2 = Message("iyi sen", System.currentTimeMillis(), mutableListOf(messageContent))
+            val message3 = Message("Bugün çok yorulduk", System.currentTimeMillis(), mutableListOf(messageContent))
+            messageList.add(message)
+            messageList.add(message2)
+            messageList.add(message3)
+        }
 
-        val message = Message(messageContent, System.currentTimeMillis(), mutableListOf())
-        messageList.add(message) // messageList'e mesajı ekleyin
-
-        messageAdapter.notifyDataSetChanged() // messageAdapter'ı güncelleyin
-
-        println("listemesaj:$messageList")
-        // Dikkat: Burada messageList'inizi messageAdapter'a ekleyeceğiniz bir kod satırı eklemeniz gerekiyor
+        initRecycler()
+        println("Gelen mesaj: $messageContent")
+        println("Liste mesaj: $messageList")
     }
 
     private fun initRecycler() {
@@ -61,6 +64,7 @@ class SocialNetworkFragment : Fragment() {
         binding.rcylerMessages.adapter = messageAdapter
         val layoutManager = LinearLayoutManager(context)
         binding.rcylerMessages.layoutManager = layoutManager
+        messageAdapter.notifyDataSetChanged()
     }
 
     private fun navigateToBottombar(id: Int) {   // Bottom bar ın seçilen id sine göre yönlendiriyor
