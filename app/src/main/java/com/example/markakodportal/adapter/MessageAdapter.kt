@@ -28,11 +28,24 @@ class MessageAdapter(var messageList: List<Message>) : RecyclerView.Adapter<Mess
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MessageViewHolder {
         val binding = ItemMessageBinding.inflate(LayoutInflater.from(parent.context), parent, false)
 
-        binding.imgComment.setOnClickListener {
-            binding.txtComment.visibility = View.VISIBLE
-            binding.linearlayoutYorum.visibility = View.VISIBLE
-            binding.imgSendButton.visibility = View.VISIBLE
 
+
+        var isHidden = true // Başlangıçta gizlenmiş olarak varsayalım
+
+        binding.imgComment.setOnClickListener {
+            if (isHidden) {
+                // Gösterilecek görünümler
+                binding.txtComment.visibility = View.VISIBLE
+                binding.linearlayoutYorum.visibility = View.VISIBLE
+                binding.imgSendButton.visibility = View.VISIBLE
+            } else {
+                // Gizlenecek görünümler
+                binding.txtComment.visibility = View.GONE
+                binding.linearlayoutYorum.visibility = View.GONE
+                binding.imgSendButton.visibility = View.GONE
+            }
+
+            isHidden = !isHidden // Durumu tersine çevir
         }
         return MessageViewHolder(binding)
     }
@@ -40,7 +53,7 @@ class MessageAdapter(var messageList: List<Message>) : RecyclerView.Adapter<Mess
     override fun onBindViewHolder(holder: MessageViewHolder, position: Int) {
         val currentMessage = messageList[position]
         val txtyorum = holder.itemView.findViewById<EditText>(R.id.txtComment)
-        val txtyorumm = holder.itemView.findViewById<TextView>(R.id.txtYorum)
+        val txtyorumsend = holder.itemView.findViewById<TextView>(R.id.txtYorum)
         val SendButton = holder.itemView.findViewById<ImageView>(R.id.imgSendButton)
         val linearlayoutYorum = holder.itemView.findViewById<LinearLayout>(R.id.linearlayoutYorum)
         val layoutyorummesaj = holder.itemView.findViewById<LinearLayout>(R.id.layoutyorummesajı)
@@ -60,8 +73,8 @@ class MessageAdapter(var messageList: List<Message>) : RecyclerView.Adapter<Mess
 
             val messageText = txtyorum.text.toString()
 
-            txtyorumm.text = messageText
-            txtyorumm.visibility = View.VISIBLE
+            txtyorumsend.text = messageText
+            txtyorumsend.visibility = View.VISIBLE
             txtyorum.setText("")
 
             txtyorum.visibility = View.GONE
