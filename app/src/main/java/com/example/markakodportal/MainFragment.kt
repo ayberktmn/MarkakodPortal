@@ -48,23 +48,19 @@ class MainFragment : Fragment() {
             when (it.itemId) {
 
                 R.id.home ->
-
                     childFragmentManager.primaryNavigationFragment?.findNavController()
                         ?.navigate(R.id.homeFragment)
 
-
-                R.id.socialChat -> {
-                    // Profile öğesine tıklandığında yapılacak işlemler
+                R.id.socialChat ->
                     childFragmentManager.primaryNavigationFragment?.findNavController()
                         ?.navigate(R.id.socailNetworkFragment)
-                }
 
                 R.id.profile ->
                     childFragmentManager.primaryNavigationFragment?.findNavController()
                         ?.navigate(R.id.profileFragment)
 
-
-                R.id.aboutus -> childFragmentManager.primaryNavigationFragment?.findNavController()
+                R.id.aboutus ->
+                    childFragmentManager.primaryNavigationFragment?.findNavController()
                     ?.navigate(R.id.aboutusFragment)
 
                 else -> {
@@ -101,7 +97,6 @@ class MainFragment : Fragment() {
             binding.editFab?.startAnimation(rotateToBottom)
             binding.imgFab?.startAnimation(rotateToBottom)
             binding.fab.startAnimation(rotateClose)
-
         }
     }
 
