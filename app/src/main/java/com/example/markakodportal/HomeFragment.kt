@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.addCallback
 import androidx.core.widget.addTextChangedListener
@@ -51,6 +52,9 @@ class HomeFragment : Fragment() {
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
             isBackPressed = true
         }
+
+        val cikis = requireActivity().findViewById<ImageView>(R.id.imgback)
+        cikis.visibility = View.GONE
 
         view.translationY = view.height.toFloat()
         view.alpha = 0f

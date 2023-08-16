@@ -42,6 +42,9 @@ class SocialNetworkFragment : Fragment() {
             isBackPressed = true
         }
 
+        val cikis = requireActivity().findViewById<ImageView>(R.id.imgback)
+        cikis.visibility = View.GONE
+
         val args = SocialNetworkFragmentArgs.fromBundle(requireArguments())
         val messageContent = args.message
 
