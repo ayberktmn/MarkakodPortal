@@ -102,7 +102,8 @@
             android:id="@+id/txtComment"
             android:layout_width="191dp"
             android:layout_height="wrap_content"
-
+            android:textCursorDrawable="@drawable/cursor"
+            style="@style/NoUnderlineEditText"
             android:hint="@string/yorum"
             android:padding="16dp"
             android:textColor="#000000"
