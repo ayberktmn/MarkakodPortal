@@ -44,7 +44,6 @@ class MessageAdapter(var messageList: List<Message>) : RecyclerView.Adapter<Mess
                 binding.linearlayoutYorum.visibility = View.GONE
                 binding.imgSendButton.visibility = View.GONE
             }
-
             isHidden = !isHidden // Durumu tersine çevir
         }
         return MessageViewHolder(binding)

@@ -53,10 +53,11 @@
                 <ImageView
                     android:id="@+id/imgback"
                     android:layout_width="50dp"
-                    android:visibility="gone"
                     android:layout_height="40dp"
                     android:layout_gravity="right"
+                    android:rotation="180"
                     android:src="@drawable/back_white"
+                    android:visibility="gone"
                     tools:layout_editor_absoluteX="16dp"
                     tools:layout_editor_absoluteY="17dp" />
             </androidx.appcompat.widget.Toolbar>
