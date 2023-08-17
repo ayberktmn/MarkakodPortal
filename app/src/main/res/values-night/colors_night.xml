@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="Light_blue">#8470ff</color>
+    <color name="transparent">#08000000</color>
+
+    <!-- Renkleri gece temaya göre ayarlayın -->
+    <color name="Red">#FF5733</color> <!-- Gece tema için kırmızı renk -->
+    <color name="yellow">#FFC107</color>
+    <color name="gray">#7E7E7E</color> <!-- Gece tema için gri renk -->
+</resources>
